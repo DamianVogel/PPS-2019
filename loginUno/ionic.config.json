@@ -1,5 +1,7 @@
 {
   "name": "loginUno",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
