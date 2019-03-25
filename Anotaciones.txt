@@ -1,0 +1,13 @@
+COMANDOS:
+    ALTA DE PROYECTO
+        -> ionic start "nombreDeProyecto"
+
+APPS:
+    loginUno:
+
+    loginDos:
+        -Material (install)
+            ->npm install --save @angular/material @angular/cdk @angular/animations
+        
+        -Material (informacion en Medium)
+            ->https://medium.com/@ivansysterov/angular-material-with-ionic-4-3be7a57fd003
