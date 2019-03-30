@@ -1,3 +1,21 @@
+Android studio
+Ionic
+FireBase
+
+Template Ionic Super -> Login pre armado
+
+
+Para clase que viene:
+    -5 aplicaciones
+        - Primer pagina login.
+            Name, contrasena, aceptar, cancelar. Si no se conecta no importa.
+        - 5 login distintos entre si.
+            Diferentes botones, fondos, tipo de fuente, disposicion de objetos.
+        
+        - Cambiar Id de  aplicacion para que se puedan tener 5 aplicaciones distintas.
+            -config.xml widget id= <--cambiar por default
+
+
 COMANDOS:
     ALTA DE PROYECTO
         -> ionic start "nombreDeProyecto"
