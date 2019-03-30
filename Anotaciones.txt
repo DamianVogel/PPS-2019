@@ -5,7 +5,7 @@ FireBase
 Template Ionic Super -> Login pre armado
 
 
-Para clase que viene:
+30/03:
     -5 aplicaciones
         - Primer pagina login.
             Name, contrasena, aceptar, cancelar. Si no se conecta no importa.
@@ -14,6 +14,17 @@ Para clase que viene:
         
         - Cambiar Id de  aplicacion para que se puedan tener 5 aplicaciones distintas.
             -config.xml widget id= <--cambiar por default
+
+06/04:
+    - Aplicaciones funcionales.
+    - FireBase
+    - Responder si es usuario valido o no.
+    - Iconos + Splash.
+        > Como generar - Fotopea generador de iconos.
+        > Splash Screen
+            -Todos los splash tienen que ser distintos.
+            -Reducir en minimo el splashcreen en blanco.
+
 
 
 COMANDOS:
