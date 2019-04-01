@@ -8,7 +8,8 @@ $height100: 100%;
 ion-grid {
     width:100%;
     height: $height100;
-    background: #dfdfdf;
+    background: #488aff
+    //background-image: image('./assets/img/loginFondo.JPG');
 }
 
 ion-row {
@@ -26,7 +27,9 @@ ion-button {
 
 @media (min-width: 240px) and (max-width: 768px) {
     ion-grid {
-        background: $white-color;
+        //background: $white-color;
+        
+        
     }
     ion-col {
         border: none;
