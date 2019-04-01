@@ -1,6 +1,3 @@
-app-login {
-    
-}
 
 $white-color: #fff;
 $height100: 100%;
@@ -26,11 +23,11 @@ ion-button {
 }
 
 @media (min-width: 240px) and (max-width: 768px) {
-    ion-grid {
-        //background: $white-color;
+    // ion-grid {
+    //     //background: $white-color;
         
         
-    }
+    // }
     ion-col {
         border: none;
     }
