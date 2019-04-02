@@ -4,23 +4,60 @@
 
 <ion-content>
   
+  <!-- <form>
     <ion-item>
       <ion-input 
+        [(ngModel)]="this.email"
         type="email" 
         placeholder="ingrese su correo electronico...." 
         autofocus="true"
-        required>
+        [ngModelOptions]="{standalone: true}"
+        required>        
       </ion-input>
     </ion-item>
     
     <ion-item>
       <ion-input 
+        [ngModelOptions]="{standalone: true}"
+        [(ngModel)]="this.clave"
         type="password" 
         placeholder="Ingrese su contraseña"
         required
       ></ion-input>
     </ion-item>
 
-    <ion-button expand="full" color="success">Conectarse</ion-button>
-    
+    <ion-button 
+      expand="full" 
+      color="success"
+      (click)="enviar()"
+      >Conectarse
+    </ion-button>
+  </form>     -->
+
+  
+
+  <ion-item>
+    <ion-input 
+      [ngModelOptions]="{standalone: true}"
+      [(ngModel)]="this.email"
+      type="text" 
+      placeholder="Alta de usuario"
+      required
+    ></ion-input>
+  </ion-item>
+
+  <ion-button 
+      expand="full" 
+      color="success"
+      (click)="alta({email:this.email})"
+      >Alta de email
+  </ion-button>
+
+  <ion-list> 
+    <ion-item *ngFor="let usuario of usuarios">
+      {{usuario.email}}
+    </ion-item>
+  </ion-list>
+
+
 </ion-content>
