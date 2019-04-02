@@ -26,20 +26,18 @@ export class HomePage {
   }
 
   enviar(){
-    alert(this.email + " " + this.clave);
-
-  }
-
-  alta(email:string){
-    //alert("estoy en el alta");
-    
-    if(email!==undefined){
-      alert("estoy en el alta");
-      let objAlta = this.ref.push()
-      objAlta.set(email);
+    for(let usuario of this.usuarios){
+      if(usuario.email == this.email && usuario.clave == this.clave){
+        alert("identificado");
+        break;
+      }
     }
 
+    //alert(this.email + " " + this.clave);
+
   }
+
+  
 
 
 

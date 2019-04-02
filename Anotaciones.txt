@@ -39,3 +39,31 @@ APPS:
     loginTres:
         Ver temas de jquery y css
         
+
+
+EJEMPLOS
+
+<!-- <ion-button 
+      expand="full" 
+      color="success"
+      (click)="alta({email:this.email})"
+      >Alta de email
+  </ion-button> -->
+
+  <!-- <ion-list> 
+    <ion-item *ngFor="let usuario of usuarios">
+      {{usuario.email}}
+    </ion-item>
+  </ion-list> -->
+
+
+  alta(email:string){
+    //alert("estoy en el alta");
+    
+    if(email!==undefined){
+      alert("estoy en el alta");
+      let objAlta = this.ref.push()
+      objAlta.set(email);
+    }
+
+  }
