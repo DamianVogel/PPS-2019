@@ -18,22 +18,24 @@ export class HomePage {
   ref = firebase.database().ref('usuarios/');
 
   constructor(){
-    this.ref.on('value', resp => {
-      //console.log(resp);
-      this.usuarios = ListaUsuarios(resp);
-      //console.log(this.usuarios);
-    });
+   
   }
 
   enviar(){
-    for(let usuario of this.usuarios){
-      if(usuario.email == this.email && usuario.clave == this.clave){
-        alert("identificado");
-        break;
-      }
-    }
-
-    //alert(this.email + " " + this.clave);
+    this.ref.on('value', resp => {    
+      this.usuarios = ListaUsuarios(resp);      
+      
+      for(let usuario of this.usuarios){
+        if(usuario.email == this.email && usuario.clave == this.clave){
+          alert("identificado");
+          break;
+        }
+      }      
+      alert("Email o clave incorrecta");   
+    });
+    
+    
+    
 
   }
 
