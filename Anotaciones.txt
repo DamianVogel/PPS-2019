@@ -19,6 +19,7 @@ Template Ionic Super -> Login pre armado
     - Aplicaciones funcionales.
     - FireBase
     - Responder si es usuario valido o no.
+        > Sin Alerts
     - Iconos + Splash.
         > Como generar - Fotopea generador de iconos.
         > Splash Screen
@@ -39,6 +40,14 @@ APPS:
     loginTres:
         Ver temas de jquery y css
         
+
+
+LINKS:
+    FIREBASE ABM
+        https://www.youtube.com/watch?v=5e7k8T8D4Lo
+
+
+
 
 
 EJEMPLOS
