@@ -9,13 +9,13 @@ export const FIREBASE_CONFIG = {
 
 export const ListaUsuarios = snapshot => {
     let ArrayUsuarios = [];
-
+    console.log("entro en la lista de usuarios");
     snapshot.forEach(element => {
         console.log(element.val());
         let item = element.val();
         item.key = element.key;
         ArrayUsuarios.push(item);
     });
-
+    console.log(ArrayUsuarios);
     return ArrayUsuarios;
 }

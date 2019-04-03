@@ -15,18 +15,18 @@
     <ion-card-content>
       <ion-item>
         <ion-label class="label" position="floating">Aca va tu correo</ion-label>
-        <ion-input type="email" autofocus="true"></ion-input>
+        <ion-input [(ngModel)]="this.email" type="email" autofocus="true"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label class="label" position="floating">Por aca la contraseña</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input [(ngModel)]="this.clave" type="password"></ion-input>
       </ion-item>
     </ion-card-content>
   </ion-card>
 
   <ion-card>
     <ion-card-content>
-      
+      <ion-button expand="full" color="success"(click)="enviar()">Conectarse</ion-button>
     </ion-card-content>
   </ion-card>
 

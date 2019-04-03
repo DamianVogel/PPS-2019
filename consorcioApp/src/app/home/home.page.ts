@@ -21,12 +21,17 @@ export class HomePage {
   }
 
   enviar(){
+    console.log("entro a enviar");
+   // console.log(this.ref);
+    
     this.ref.on('value', resp => {    
+      console.log("consulta fire");
       this.usuarios = ListaUsuarios(resp);      
       
       for(let usuario of this.usuarios){
         if(usuario.email == this.email && usuario.clave == this.clave){
           alert("identificado");
+          console.log("identificado");
           break;
         }
       }      
