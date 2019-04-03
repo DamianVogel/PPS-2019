@@ -46,18 +46,23 @@ export class HomePage {
   }
   
   enviar(){  
+    let flagLogin = false;
+
     this.ref.on('value', resp => {    
       
       this.usuarios = ListaUsuarios(resp);      
       
       for(let usuario of this.usuarios){
         if(usuario.email == this.email && usuario.clave == this.clave){
-          
-          this.loginToast(true);            
+          flagLogin = true;
+          this.loginToast(flagLogin);            
           break;
         }
       }      
-      this.loginToast(false);   
+      
+      if(!flagLogin){
+        this.loginToast(flagLogin);   
+      }  
     });
 
   }
