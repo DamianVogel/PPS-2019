@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import * as firebase from 'firebase';
 import {ListaUsuarios} from '../../app/enviroment'; 
-
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -17,30 +17,61 @@ export class HomePage {
 
   ref = firebase.database().ref('usuarios/');
 
-  constructor(){
+  constructor(public toastController: ToastController){
    
   }
 
-  enviar(){
+  async loginToast(validado:boolean) {
+    
+    if(validado){
+      const toast = await this.toastController.create({
+        message: 'Bienvenido Usuario',
+        showCloseButton: true,
+        position: 'top',
+        closeButtonText: 'Aceptar',
+        duration: 3000
+      });
+      toast.present();
+    }
+    else{
+      const toast = await this.toastController.create({
+        message: 'Clave o Usuario Incorrecto',
+        showCloseButton: true,
+        position: 'bottom',
+        closeButtonText: 'Aceptar',
+        duration: 3000
+      });
+      toast.present();
+    }  
+  }
+  
+
+
+  enviar(){  
+    let flagLogin = false;
+
     this.ref.on('value', resp => {    
+      
       this.usuarios = ListaUsuarios(resp);      
       
       for(let usuario of this.usuarios){
         if(usuario.email == this.email && usuario.clave == this.clave){
-          alert("identificado");
+          flagLogin = true;
+          this.loginToast(flagLogin);            
           break;
         }
       }      
-      alert("Email o clave incorrecta");   
+      
+      if(!flagLogin){
+        this.loginToast(flagLogin);   
+      }  
     });
-    
+
+  }
     
     
 
-  }
+}
 
   
 
-
-
-}
