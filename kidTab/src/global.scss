@@ -10,6 +10,12 @@
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
 
+*{
+    font-family: 'Righteous', cursive;
+    
+}
+
+
 .toastOk{
     --background:rgb(61, 201, 66);
     --box-shadow: 4px 4px 8px 1px rgb(96, 155, 91);
@@ -17,7 +23,7 @@
     // --width: 400px;
     // --min-width: 250px;
     // --max-width: 500px;
-    --height: 250px;
+    --height: 100px;
 
 }
 
@@ -28,5 +34,5 @@
     // --min-width: 250px;
     // --max-width: 500px;
     // --width: 400px;
-    --height: 250px;
+    --height: 100px;
 }
