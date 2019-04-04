@@ -26,20 +26,25 @@ export class HomePage {
     if(validado){
       const toast = await this.toastController.create({
         message: 'Bienvenido Usuario',
-        showCloseButton: true,
-        position: 'top',
-        closeButtonText: 'Aceptar',
-        duration: 3000
+        //showCloseButton: true,
+        position: 'middle',
+        //closeButtonText: 'Aceptar',
+        duration: 3000,
+        //color: 'success',
+        animated: true,
+        cssClass: 'toastOk'
       });
       toast.present();
     }
     else{
       const toast = await this.toastController.create({
         message: 'Clave o Usuario Incorrecto',
-        showCloseButton: true,
-        position: 'bottom',
-        closeButtonText: 'Aceptar',
-        duration: 3000
+        //showCloseButton: true,
+        position: 'middle',
+        duration: 3000,
+        //color: 'danger',
+        animated: true,
+        cssClass: 'toastFail'
       });
       toast.present();
     }  
