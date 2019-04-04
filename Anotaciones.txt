@@ -92,3 +92,6 @@ EJEMPLOS
 But I solved this problem changing this command “ionic build android --release” for ‘ionic build android --prod’
 
 let me know if this works for you
+
+
+color: a58989
