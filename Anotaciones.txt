@@ -76,3 +76,19 @@ EJEMPLOS
     }
 
   }
+
+
+  EJEMPLO DE CONFIGURACION xml
+  Sure! There is my config.xml
+
+<preference name="loadUrlTimeoutValue" value="700000"/> 
+<preference name="SplashMaintainAspectRatio" value="true" /> 
+<preference name="SplashShowOnlyFirstTime" value="false" /> 
+<preference name="SplashScreen" value="screen" /> 
+<preference name="SplashScreenDelay" value="4000" /> 
+<platform name="android"> 
+<preference name="ShowSplashScreenSpinner" value="true" /> </platform>
+
+But I solved this problem changing this command “ionic build android --release” for ‘ionic build android --prod’
+
+let me know if this works for you
