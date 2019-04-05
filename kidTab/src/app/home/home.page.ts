@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import * as firebase from 'firebase';
 import {ListaUsuarios} from '../../app/enviroment'; 
 import { ToastController } from '@ionic/angular';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+//FormsModule, ReactiveFormsModule, Validators
 
 @Component({
   selector: 'app-home',
@@ -17,8 +21,20 @@ export class HomePage {
 
   ref = firebase.database().ref('usuarios/');
 
-  constructor(public toastController: ToastController){
+  public formGroup: FormGroup;
+
+  constructor(
+    public toastController: ToastController,
+    private formBuilder: FormBuilder){
    
+    this.buildForm();
+  }
+
+  private buildForm(){
+    this.formGroup = this.formBuilder.group({    
+      email: ['', [Validators.email, Validators.required]],
+      clave: ['', [Validators.required]]
+    });
   }
 
   async loginToast(validado:boolean) {
@@ -53,6 +69,7 @@ export class HomePage {
 
 
   enviar(){  
+
     let flagLogin = false;
 
     this.ref.on('value', resp => {    
@@ -60,13 +77,16 @@ export class HomePage {
       this.usuarios = ListaUsuarios(resp);      
       
       for(let usuario of this.usuarios){
-        if(usuario.email == this.email && usuario.clave == this.clave){
+        if(usuario.email == this.formGroup.value.email && usuario.clave == this.formGroup.value.clave){
+          
+          //VALIDADO
           flagLogin = true;
           this.loginToast(flagLogin);            
           break;
         }
       }      
       
+      //NO VALIDADO
       if(!flagLogin){
         this.loginToast(flagLogin);   
       }  
