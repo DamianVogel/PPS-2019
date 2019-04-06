@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  rutaImagen: string;
+
+  constructor(){
+    this.rutaImagen='../../assets/Bandido 1024-pdf.png'
+  }
+
 }

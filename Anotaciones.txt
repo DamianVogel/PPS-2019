@@ -25,6 +25,13 @@ Template Ionic Super -> Login pre armado
         > Splash Screen
             -Todos los splash tienen que ser distintos.
             -Reducir en minimo el splashcreen en blanco.
+13/04
+    - Notas personales:
+        > Cambiar iconos, agregar sigla.
+        > Splash con nombre de alumno.
+        > Imagenes que indique para que sirve la app.
+        > Ocupar espacios en blanco.
+
 
 
 
