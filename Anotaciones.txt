@@ -32,6 +32,23 @@ Template Ionic Super -> Login pre armado
         > Imagenes que indique para que sirve la app.
         > Ocupar espacios en blanco.
 
+    - Para Hacer:
+        > Pendiente de antes: Nombre y division.
+        > Splash tiene que  tener animacion.
+            * Icono como minimo.
+            * Lo mas suave posible.
+            * Al menos una cosa.
+        
+        > Pantallas presentadas para las aplicaciones.
+            * Relevamiento visual. 
+                - Fotos lindas. 
+                - Fotos Feas.
+            * Kid Tab
+                -Lista de Colores.
+                -Lista de animales.
+        
+        >
+
 
 
 
