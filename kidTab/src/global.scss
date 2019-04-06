@@ -9,15 +9,16 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
 
 *{
-    font-family: 'Righteous', cursive;
+    font-family: 'Pacifico', cursive;
     
 }
 
 
 .toastOk{
-    --background:rgb(61, 201, 66);
+    --background:#67AB6A;
     --box-shadow: 4px 4px 8px 1px rgb(96, 155, 91);
     --border-radius: 10px 10px 10px 10px;
     // --width: 400px;
@@ -28,7 +29,7 @@
 }
 
 .toastFail{
-    --background:rgb(167, 75, 33);
+    --background:#C370A0;
     --box-shadow: 4px 4px 8px 1px rgb(138, 96, 89);
     --border-radius: 10px 10px 10px 10px;
     // --min-width: 250px;
