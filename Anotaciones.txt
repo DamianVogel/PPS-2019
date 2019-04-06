@@ -120,3 +120,5 @@ let me know if this works for you
 
 
 color: a58989
+
+OCR A Extended
