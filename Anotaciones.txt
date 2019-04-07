@@ -118,7 +118,6 @@ But I solved this problem changing this command “ionic build android --release
 
 let me know if this works for you
 
-
-color: a58989
+COLOR QR: #8CCC75
 
 OCR A Extended
