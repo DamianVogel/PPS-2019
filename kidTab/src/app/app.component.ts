@@ -7,11 +7,17 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import * as firebase from 'firebase';
 import {FIREBASE_CONFIG} from './enviroment'; 
 
+import { timer } from 'rxjs';
+
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
+  
+  showSplash = true;
+  
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -22,9 +28,12 @@ export class AppComponent {
   }
 
   initializeApp() {
+    
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+    
+      timer(5000).subscribe(() => this.showSplash = false)   
     });
   
     
