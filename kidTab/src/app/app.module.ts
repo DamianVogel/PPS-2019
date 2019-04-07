@@ -18,7 +18,8 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule
+    
   ],
   providers: [
     StatusBar,
