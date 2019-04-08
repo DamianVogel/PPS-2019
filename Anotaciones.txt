@@ -55,6 +55,7 @@ Template Ionic Super -> Login pre armado
 COMANDOS:
     ALTA DE PROYECTO
         -> ionic start "nombreDeProyecto"
+        -> ionic cordova run android --prod 
 
 APPS:
     loginUno:
