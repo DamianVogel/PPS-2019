@@ -58,12 +58,14 @@ COMANDOS:
         -> ionic cordova run android --prod 
 
 APPS:
-    loginUno:
-
-    loginDos:
-
-    loginTres:
-        Ver temas de jquery y css
+   kidtab:
+        -> Login:
+            - Completar.
+    QR:
+        -> Color:
+            - QR: #8CCC75
+    
+    
         
 
 
@@ -78,33 +80,34 @@ LINKS:
 
 EJEMPLOS
 
-<!-- <ion-button 
-      expand="full" 
-      color="success"
-      (click)="alta({email:this.email})"
-      >Alta de email
-  </ion-button> -->
+    FIRE BASE
+        <!-- <ion-button 
+            expand="full" 
+            color="success"
+            (click)="alta({email:this.email})"
+            >Alta de email
+        </ion-button> -->
 
-  <!-- <ion-list> 
-    <ion-item *ngFor="let usuario of usuarios">
-      {{usuario.email}}
-    </ion-item>
-  </ion-list> -->
-
-
-  alta(email:string){
-    //alert("estoy en el alta");
-    
-    if(email!==undefined){
-      alert("estoy en el alta");
-      let objAlta = this.ref.push()
-      objAlta.set(email);
-    }
-
-  }
+        <!-- <ion-list> 
+            <ion-item *ngFor="let usuario of usuarios">
+            {{usuario.email}}
+            </ion-item>
+        </ion-list> -->
 
 
-  EJEMPLO DE CONFIGURACION xml
+        alta(email:string){
+            //alert("estoy en el alta");
+            
+            if(email!==undefined){
+            alert("estoy en el alta");
+            let objAlta = this.ref.push()
+            objAlta.set(email);
+            }
+
+        }
+
+
+EJEMPLO DE CONFIGURACION xml
   Sure! There is my config.xml
 
 <preference name="loadUrlTimeoutValue" value="700000"/> 
@@ -117,7 +120,7 @@ EJEMPLOS
 
 But I solved this problem changing this command “ionic build android --release” for ‘ionic build android --prod’
 
-let me know if this works for you
+
 
 COLOR QR: #8CCC75
 
