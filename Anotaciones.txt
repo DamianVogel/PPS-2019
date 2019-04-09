@@ -74,6 +74,9 @@ LINKS:
         https://www.youtube.com/watch?v=5e7k8T8D4Lo
     CSS
         https://www.cssmatic.com/
+        https://www.webfx.com/blog/web-design/responsive-background-image/
+
+
 
 
 
