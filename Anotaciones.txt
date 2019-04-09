@@ -78,6 +78,12 @@ LINKS:
     
     LOGO:
         https://logomakr.com
+    
+    IONI:
+        https://ionicframework.com/docs/v3/native/lottie-splash-screen/
+        https://github.com/timbru31/cordova-plugin-lottie-splashscreen
+        https://blog.interactius.com/lottie-para-web-de151e57aec9
+        
 
 
 
