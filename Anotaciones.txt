@@ -75,6 +75,9 @@ LINKS:
     CSS
         https://www.cssmatic.com/
         https://www.webfx.com/blog/web-design/responsive-background-image/
+    
+    LOGO:
+        https://logomakr.com
 
 
 
