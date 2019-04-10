@@ -28,12 +28,15 @@ Template Ionic Super -> Login pre armado
 13/04
     - Notas personales:
         > Cambiar iconos, agregar sigla.
-        > Splash con nombre de alumno.
+            -> AntiLadri APP
+        > Splash con nombre de alumno y division, etc.
+            -> AntiLadri APP
+            -> Consorcio APP
         > Imagenes que indique para que sirve la app.
         > Ocupar espacios en blanco.
+            -Todas las APP
 
     - Para Hacer:
-        > Pendiente de antes: Nombre y division.
         > Splash tiene que  tener animacion.
             * Icono como minimo.
             * Lo mas suave posible.
@@ -46,8 +49,6 @@ Template Ionic Super -> Login pre armado
             * Kid Tab
                 -Lista de Colores.
                 -Lista de animales.
-        
-        >
 
 
 
