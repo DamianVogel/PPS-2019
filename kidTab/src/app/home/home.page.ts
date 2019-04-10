@@ -19,6 +19,8 @@ export class HomePage {
 
   usuarios : any;
 
+  imagen = '../../assets/LogoKidTabSolo.png';
+
   ref = firebase.database().ref('usuarios/');
 
   public formGroup: FormGroup;
