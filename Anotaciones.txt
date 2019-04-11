@@ -58,7 +58,11 @@ Template Ionic Super -> Login pre armado
 COMANDOS:
     ALTA DE PROYECTO
         -> ionic start "nombreDeProyecto"
+    CORRER    
         -> ionic cordova run android --prod 
+    CERTIFICADO
+        -> https://medium.com/@thianlopezz/c%C3%B3mo-firmar-mis-apk-para-subir-mi-app-a-play-store-de-google-84cfe877b980
+
 
 APPS:
    kidtab:
