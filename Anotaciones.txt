@@ -37,6 +37,8 @@ Template Ionic Super -> Login pre armado
             -Todas las APP
 
     - Para Hacer:
+        
+        
         > Splash tiene que  tener animacion.
             * Icono como minimo.
             * Lo mas suave posible.
