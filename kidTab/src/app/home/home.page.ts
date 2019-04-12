@@ -14,7 +14,7 @@ import {ConexionUsuariosPage} from '../conexion-usuarios/conexion-usuarios.page'
 })
 export class HomePage {
   
-  email: string;
+  correo: string;
   clave: string;
 
   usuarios : any;
@@ -105,7 +105,7 @@ export class HomePage {
       this.usuarios = ListaUsuarios(resp);      
       
       for(let usuario of this.usuarios){
-        if(usuario.email == this.formGroup.value.email && usuario.clave == this.formGroup.value.clave){
+        if(usuario.correo == this.formGroup.value.email && usuario.clave == this.formGroup.value.clave){
           
           //VALIDADO
           flagLogin = true;
