@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuariosTest } from '../../app/enviroment'; 
+
 
 
 @Component({
@@ -9,11 +11,14 @@ import { Component, OnInit } from '@angular/core';
 export class ConexionUsuariosPage implements OnInit {
 
   // @Input() value: number;
+  usuariosTest: any;
 
-  constructor() { }
+  constructor() { 
+    this.usuariosTest = UsuariosTest();
+  }
 
   ngOnInit() {
-  
+    console.log(this.usuariosTest);
   }
 
 }
