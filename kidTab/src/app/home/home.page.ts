@@ -19,6 +19,8 @@ export class HomePage {
 
   usuarios : any;
 
+  usuarioSeleccionado: any;
+
   imagen = '../../assets/LogoKidTabSolo.png';
 
   ref = firebase.database().ref('usuarios/');
@@ -45,6 +47,21 @@ export class HomePage {
       component: ConexionUsuariosPage,
       componentProps: { value: 123 }
     });
+
+    modal.onDidDismiss()
+      .then((data) => {
+        
+        this.usuarioSeleccionado = data.data; // Here's your selected user!
+        console.log(this.usuarioSeleccionado.clave);
+        console.log(this.usuarioSeleccionado.correo);
+
+        // this.formGroup.value.email = this.usuarioSeleccionado.correo;
+        // this.formGroup.value.clave = this.usuarioSeleccionado.clave;
+
+        this.formGroup.controls['email'].setValue(this.usuarioSeleccionado.correo);
+        this.formGroup.controls['clave'].setValue(this.usuarioSeleccionado.clave);
+      });
+
     return await modal.present();
   }
   

@@ -90,6 +90,7 @@ LINKS:
         https://ionicframework.com/docs/v3/native/lottie-splash-screen/
         https://github.com/timbru31/cordova-plugin-lottie-splashscreen
         https://blog.interactius.com/lottie-para-web-de151e57aec9
+        https://medium.com/@thianlopezz/c%C3%B3mo-firmar-mis-apk-para-subir-mi-app-a-play-store-de-google-84cfe877b980
     
     VARIOS:
         Make sure that we should only
