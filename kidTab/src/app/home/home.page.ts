@@ -14,8 +14,8 @@ import {ConexionUsuariosPage} from '../conexion-usuarios/conexion-usuarios.page'
 })
 export class HomePage {
   
-  correo: string;
-  clave: string;
+  // correo: string;
+  // clave: string;
 
   usuarios : any;
 
@@ -69,7 +69,7 @@ export class HomePage {
     
     if(validado){
       const toast = await this.toastController.create({
-        message: 'Bienvenido Usuario',
+        message: 'Bienvenido ' + this.usuarioSeleccionado.correo,
         //showCloseButton: true,
         position: 'middle',
         //closeButtonText: 'Aceptar',

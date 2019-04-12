@@ -24,10 +24,13 @@
     --background:#67AB6A;
     --box-shadow: 4px 4px 8px 1px rgb(96, 155, 91);
     --border-radius: 10px 10px 10px 10px;
+    font-size: 5.0vw;
+    text-align: center;
     // --width: 400px;
     // --min-width: 250px;
     // --max-width: 500px;
-    --height: 100px;
+    --height: 10%;
+    --width: 80%;
 
 }
 
@@ -35,10 +38,14 @@
     --background:#C370A0;
     --box-shadow: 4px 4px 8px 1px rgb(138, 96, 89);
     --border-radius: 10px 10px 10px 10px;
+    font-size: 5.0vw;
+    
+    text-align: center;
     // --min-width: 250px;
     // --max-width: 500px;
     // --width: 400px;
-    --height: 100px;
+    --height: 10%;
+    --width: 80%;
 }
 
 .splash {
