@@ -97,6 +97,15 @@ LINKS:
         1   import modules and not the components or services
         2   declare components and not the modules or services.
         3   provide services and not components or modules.
+
+    FIRMAR:     
+        JAVA - 
+        1-ionic cordova build android --prod --release
+        2-keytool -genkey -v -keystore kidtab.keystore -alias dv -keyalg RSA -keysize 2048 -validity 10000
+        3-jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore C:\APK\kidtab.keystore C:\APK\app-release-unsigned.apk dv
+        
+        SDK - C:\Users\dvogel\AppData\Local\Android\Sdk\build-tools\28.0.3
+        4-.\zipalign -v 4 C:\APK\app-release-unsigned.apk C:\APK\kidtabFirmado.apk
     
     
         

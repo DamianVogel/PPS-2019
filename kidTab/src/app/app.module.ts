@@ -14,7 +14,7 @@ import { ConexionUsuariosPage } from '../app/conexion-usuarios/conexion-usuarios
 
 
 @NgModule({
-  declarations: [AppComponent, ConexionUsuariosPage],
+  declarations: [AppComponent],
   entryComponents: [ConexionUsuariosPage],
   imports: [
     BrowserModule, 
