@@ -86,10 +86,18 @@ LINKS:
     LOGO:
         https://logomakr.com
     
-    IONI:
+    IONIC:
         https://ionicframework.com/docs/v3/native/lottie-splash-screen/
         https://github.com/timbru31/cordova-plugin-lottie-splashscreen
         https://blog.interactius.com/lottie-para-web-de151e57aec9
+    
+    VARIOS:
+        Make sure that we should only
+        1   import modules and not the components or services
+        2   declare components and not the modules or services.
+        3   provide services and not components or modules.
+    
+    
         
 
 

@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import * as firebase from 'firebase';
 import {ListaUsuarios} from '../../app/enviroment'; 
 import { ToastController } from '@ionic/angular';
-import { ReactiveFormsModule } from '@angular/forms';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-//FormsModule, ReactiveFormsModule, Validators
+import { ModalController } from '@ionic/angular';
+import {ConexionUsuariosPage} from '../conexion-usuarios/conexion-usuarios.page';
 
 @Component({
   selector: 'app-home',
@@ -27,7 +27,8 @@ export class HomePage {
 
   constructor(
     public toastController: ToastController,
-    private formBuilder: FormBuilder){
+    private formBuilder: FormBuilder,
+    public modalController: ModalController){
    
     this.buildForm();
   }
@@ -39,6 +40,14 @@ export class HomePage {
     });
   }
 
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: ConexionUsuariosPage,
+      componentProps: { value: 123 }
+    });
+    return await modal.present();
+  }
+  
   async loginToast(validado:boolean) {
     
     if(validado){
@@ -93,6 +102,11 @@ export class HomePage {
         this.loginToast(flagLogin);   
       }  
     });
+
+  }
+
+  mostrarUsuarios(){
+    this.presentModal();
 
   }
     

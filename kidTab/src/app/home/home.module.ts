@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 import { ReactiveFormsModule } from '@angular/forms';
+//import { ConexionUsuariosPage } from '../conexion-usuarios/conexion-usuarios.page';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
         path: '',
         component: HomePage
       }
-    ])
+    ]),
+    
   ],
   declarations: [HomePage]
 })

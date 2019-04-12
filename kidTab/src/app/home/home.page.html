@@ -3,11 +3,10 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    
+  <ion-card> 
     <ion-card-header>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-      <ion-card-title>Card Title</ion-card-title>
+      <ion-card-subtitle>Desarrollado por DevDv - Damian Vogel 4º A</ion-card-subtitle>
+      <ion-card-title>KidTab</ion-card-title>
     </ion-card-header>
 
     <ion-img [src]="imagen"></ion-img>
@@ -41,4 +40,8 @@
       </ion-button>
     </form>    
   </ion-card>
+
+  <ion-card>   
+        <ion-button expand="full" (click)="mostrarUsuarios()"  >Mostrar menu</ion-button>   
+  </ion-card>  
 </ion-content>
