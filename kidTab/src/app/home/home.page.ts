@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import * as firebase from 'firebase';
 import {ListaUsuarios} from '../../app/enviroment'; 
-import { ToastController } from '@ionic/angular';
+import { ToastController, NavController } from '@ionic/angular';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import {ConexionUsuariosPage} from '../conexion-usuarios/conexion-usuarios.page';
+import { timer } from 'rxjs';
+
+
 
 @Component({
   selector: 'app-home',
@@ -30,7 +33,8 @@ export class HomePage {
   constructor(
     public toastController: ToastController,
     private formBuilder: FormBuilder,
-    public modalController: ModalController){
+    public modalController: ModalController,
+    public navController: NavController){
    
     this.buildForm();
   }
@@ -110,6 +114,9 @@ export class HomePage {
           //VALIDADO
           flagLogin = true;
           this.loginToast(flagLogin);            
+          
+          timer(5000).subscribe(() => this.navController.navigateForward('/menu')); 
+          
           break;
         }
       }      

@@ -11,16 +11,22 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { ConexionUsuariosPage } from '../app/conexion-usuarios/conexion-usuarios.page';
+import {ConexionUsuariosPageModule} from '../app/conexion-usuarios/conexion-usuarios.module';
+
+import { MenuPage} from '../app/menu/menu.page';
+import { MenuPageModule } from '../app/menu/menu.module';
 
 
 @NgModule({
   declarations: [AppComponent],
-  entryComponents: [ConexionUsuariosPage],
+  entryComponents: [ConexionUsuariosPage,MenuPage],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ConexionUsuariosPageModule,
+    MenuPageModule
     
   ],
   providers: [
