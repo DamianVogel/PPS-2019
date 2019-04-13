@@ -51,6 +51,10 @@ Template Ionic Super -> Login pre armado
             * Kid Tab
                 -Lista de Colores.
                 -Lista de animales.
+                -Botones de Animales
+
+
+    - Todas las aplicaciones tiene que estar funcionales.
 
 
 
