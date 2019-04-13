@@ -5,5 +5,41 @@
 </ion-header>
 
 <ion-content>
-
+    <ion-grid fixed="true">
+        <ion-row>
+          <ion-col>
+              <ion-card>
+                  <ion-item>
+                    <ion-img [src]="colores"></ion-img>
+                    
+                    <ion-button expand="block" fill="solid" slot="end">Comenzar</ion-button>
+                  </ion-item>
+                
+                  <ion-card-content>
+                    Diferentes colores para aprender jugando!
+                  </ion-card-content>
+                </ion-card>
+                
+          </ion-col>         
+        </ion-row>
+      
+        <ion-row>
+          <ion-col >
+              <ion-card>
+                  <ion-item>
+                    
+                    
+                    <ion-img [src]="animales"></ion-img> 
+                   
+                    <ion-button expand="block" fill="solid" slot="end">Comenzar</ion-button>
+                  </ion-item>
+                
+                  <ion-card-content>
+                    Divertidos sonidos de animales de la granja!
+                  </ion-card-content>
+                </ion-card>
+                
+          </ion-col>
+        </ion-row>
+      </ion-grid>
 </ion-content>
