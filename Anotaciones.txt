@@ -105,7 +105,7 @@ LINKS:
         3-jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore C:\APK\kidtab.keystore C:\APK\app-release-unsigned.apk dv
         
         SDK - C:\Users\dvogel\AppData\Local\Android\Sdk\build-tools\28.0.3
-        4-.\zipalign -v 4 C:\APK\app-release-unsigned.apk C:\APK\kidtabFirmado.apk
+        4-.\zipalign -v 4 C:\APK\kidtabUnsigned.apk C:\APK\kidtabFirmado.apk
     
     
         
