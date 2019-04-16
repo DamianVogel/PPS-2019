@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { HomePage } from './home.page';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ConexionUsuariosPage } from '../conexion-usuarios/conexion-usuarios.page';
-//import {ConexionUsuariosPageModule} from '../conexion-usuarios/conexion-usuarios.module';
+
 
 @NgModule({
   imports: [
