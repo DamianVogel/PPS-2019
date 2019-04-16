@@ -98,6 +98,9 @@ LINKS:
         https://medium.com/@thianlopezz/c%C3%B3mo-firmar-mis-apk-para-subir-mi-app-a-play-store-de-google-84cfe877b980
     
     VARIOS:
+        ANGULAR 
+        https://www.adictosaltrabajo.com/2015/07/29/docker-for-dummies/
+        
         Make sure that we should only
         1   import modules and not the components or services
         2   declare components and not the modules or services.
