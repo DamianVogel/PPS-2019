@@ -5,24 +5,18 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
-import { ReactiveFormsModule } from '@angular/forms';
-// import { ConexionUsuariosPage } from '../conexion-usuarios/conexion-usuarios.page';
-
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ReactiveFormsModule,
-    
     RouterModule.forChild([
       {
         path: '',
         component: HomePage
       }
-    ]),
-    
+    ])
   ],
   declarations: [HomePage]
 })
