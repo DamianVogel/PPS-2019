@@ -17,7 +17,6 @@ export class AppComponent {
   
   showSplash = true;
   
-  
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,

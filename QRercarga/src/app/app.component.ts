@@ -32,6 +32,7 @@ export class AppComponent {
       this.splashScreen.hide();
       
       timer(5000).subscribe(() => this.showSplash = false)
+      
     });
   }
 }
