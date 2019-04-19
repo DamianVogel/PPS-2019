@@ -87,7 +87,8 @@ LINKS:
         https://www.cssmatic.com/
         https://www.webfx.com/blog/web-design/responsive-background-image/
         https://angularfirebase.com/lessons/generate-a-custom-spash-screen-and-icons-in-ionic/
-    
+        https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
     LOGO:
         https://logomakr.com
     
