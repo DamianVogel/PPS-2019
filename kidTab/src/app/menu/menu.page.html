@@ -1,20 +1,21 @@
 <ion-content no-padding no-margin>
-  <ion-grid no-padding>
-    <ion-row *ngIf="!listaColores">
-      <ion-col>
+  <ion-grid no-padding no-margin>
+    <ion-row  no-padding no-margin *ngIf="!listaColores">
+      <ion-col no-padding no-margin>
         <ion-button 
           (click)="mostrarColores()"
           size="large" 
           expand="full" 
-          no-margin 
+          no-margin
+          no-padding 
           responsive-lg
           >Colores
         </ion-button>
       </ion-col>
     </ion-row>
 
-    <ion-row *ngIf="!listaNumeros">
-      <ion-col>
+    <ion-row  *ngIf="!listaNumeros">
+      <ion-col no-padding no-margin>
         <ion-button 
           (click)="mostrarNumeros()"
           size="large" 
@@ -24,8 +25,8 @@
           >Numeros</ion-button>
       </ion-col>
     </ion-row>
-    <ion-row *ngIf="!listaAnimales">
-      <ion-col>
+    <ion-row  *ngIf="!listaAnimales">
+      <ion-col no-padding no-margin>
         <ion-button 
           (click)="mostrarAnimales()"  
           size="large" 
@@ -36,29 +37,29 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>
+      <ion-col no-padding no-margin>
         <ion-button color="medium" size="large" expand="full" no-margin responsive-lg>Idioma</ion-button>
       </ion-col>
     </ion-row>
     
     
     <!--COLORES-->
-    <ion-row *ngIf="listaColores">
-      <ion-col>
+    <ion-row  *ngIf="listaColores">
+      <ion-col no-padding no-margin>
         <ion-button size="large" expand="full" no-margin responsive-lg>Color 1</ion-button>
       </ion-col>
     </ion-row>
 
     <!--NUMEROS-->
-    <ion-row *ngIf="listaNumeros">
-      <ion-col>
+    <ion-row  *ngIf="listaNumeros">
+      <ion-col no-padding no-margin>
         <ion-button color="secondary" size="large" expand="full" no-margin responsive-lg>Numero 1</ion-button>
       </ion-col>
     </ion-row>
 
     <!--ANIMALES-->
-    <ion-row *ngIf="listaAnimales">
-      <ion-col>
+    <ion-row  *ngIf="listaAnimales">
+      <ion-col no-padding no-margin>
         <ion-button color="tertiary" size="large" expand="full" no-margin responsive-lg>Animal 1</ion-button>
       </ion-col>
     </ion-row>
