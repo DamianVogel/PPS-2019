@@ -10,9 +10,41 @@ export class MenuPage implements OnInit {
   animales = '../../assets/Animales.PNG';
   colores = '../../assets/Colores.PNG';
 
-  constructor() { }
+  listaColores:boolean;
+  listaNumeros:boolean;
+  listaAnimales:boolean;
+
+
+
+  constructor() { 
+    this.listaColores = false;
+    this.listaNumeros = false;
+    this.listaAnimales = false;
+  }
 
   ngOnInit() {
   }
+
+  mostrarColores(){
+    this.listaColores=true;
+    this.listaNumeros=false;
+    this.listaAnimales=false;
+  }
+
+  mostrarNumeros(){
+    this.listaColores=false;
+    this.listaNumeros=true;
+    this.listaAnimales=false;
+    
+  }
+
+  mostrarAnimales(){
+    this.listaColores=false;
+    this.listaNumeros=false;
+    this.listaAnimales=true;
+    
+  }
+
+
 
 }
