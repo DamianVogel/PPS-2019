@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import * as firebase from 'firebase';
 import {ListaUsuarios} from '../../app/enviroment'; 
-import { ToastController, NavController } from '@ionic/angular';
+import { ToastController, NavController, ModalController } from '@ionic/angular';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ModalController } from '@ionic/angular';
+
 import {ConexionUsuariosPage} from '../conexion-usuarios/conexion-usuarios.page';
 import { timer } from 'rxjs';
 

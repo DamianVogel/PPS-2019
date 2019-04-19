@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
 import * as firebase from 'firebase';
 import { ListaUsuarios } from '../../app/enviroment'; 
-import { ToastController } from '@ionic/angular';
+import { ToastController, NavController, ModalController } from '@ionic/angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { timer } from 'rxjs';
+import {ConexionUsuariosPage} from '../conexion-usuarios/conexion-usuarios.page';
+
+
 
 @Component({
   selector: 'app-home',
@@ -11,8 +15,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class HomePage {
 
-  email: string;
-  clave: string;
+  
+
+  usuarioSeleccionado: any;
 
   usuarios : any;
 
@@ -22,7 +27,9 @@ export class HomePage {
 
   constructor(
     public toastController: ToastController,
-    private formBuilder: FormBuilder){
+    private formBuilder: FormBuilder,
+    public modalController: ModalController,
+    public navController: NavController){
     
     this.buildForm();
   }
@@ -32,6 +39,29 @@ export class HomePage {
       email: ['', [Validators.email, Validators.required]],
       clave: ['', [Validators.required]]
     });
+  }
+
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: ConexionUsuariosPage,
+      componentProps: { value: 123 }
+    });
+
+    modal.onDidDismiss()
+      .then((data) => {
+        
+        this.usuarioSeleccionado = data.data; // Here's your selected user!
+        console.log(this.usuarioSeleccionado.clave);
+        console.log(this.usuarioSeleccionado.correo);
+
+        // this.formGroup.value.email = this.usuarioSeleccionado.correo;
+        // this.formGroup.value.clave = this.usuarioSeleccionado.clave;
+
+        this.formGroup.controls['email'].setValue(this.usuarioSeleccionado.correo);
+        this.formGroup.controls['clave'].setValue(this.usuarioSeleccionado.clave);
+      });
+
+    return await modal.present();
   }
 
   async loginToast(validado:boolean) {
@@ -66,9 +96,11 @@ export class HomePage {
       this.usuarios = ListaUsuarios(resp);      
       
       for(let usuario of this.usuarios){
-        if(usuario.email == this.formGroup.value.email && usuario.clave == this.formGroup.value.clave){
+        if(usuario.correo == this.formGroup.value.email && usuario.clave == this.formGroup.value.clave){
           flagLogin = true;
           this.loginToast(flagLogin);            
+          timer(2500).subscribe(() => this.navController.navigateForward('/menu'));
+
           break;
         }
       }      
@@ -79,4 +111,12 @@ export class HomePage {
     });
 
   }
+
+  mostrarUsuarios(){
+    this.presentModal();
+
+  }
+
+
+
 }
