@@ -115,6 +115,9 @@ LINKS:
         
         SDK - C:\Users\dvogel\AppData\Local\Android\Sdk\build-tools\28.0.3
         4-.\zipalign -v 4 C:\APK\kidtabUnsigned.apk C:\APK\kidtabFirmado.apk
+
+    CICLOS DE VIDA:
+        https://cordova.apache.org/docs/en/dev/guide/platforms/android/index.html#what-makes-android-different
     
     
         
