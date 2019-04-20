@@ -32,6 +32,16 @@ ion-content{
     flex-direction: column;
 }
 
+.firma{
+  transform: translateZ(1px);   
+  width: 120px;
+  height:20px;
+  margin: 6px;
+  //background: #84c36e;
+  // -webkit-animation: sk-rotateplane 2s infinite ease-in-out;
+  // animation: sk-rotateplane 2s infinite ease-in-out;
+}
+
 .sk-folding-cube {
     margin: 20px auto;
     width: 40px;
