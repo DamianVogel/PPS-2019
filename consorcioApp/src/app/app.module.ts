@@ -15,6 +15,8 @@ import { MenuPageModule } from '../app/menu/menu.module';
 import { ConexionUsuariosPage } from '../app/conexion-usuarios/conexion-usuarios.page';
 import {ConexionUsuariosPageModule} from '../app/conexion-usuarios/conexion-usuarios.module';
 
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [MenuPage,ConexionUsuariosPage],
@@ -28,6 +30,8 @@ import {ConexionUsuariosPageModule} from '../app/conexion-usuarios/conexion-usua
   providers: [
     StatusBar,
     SplashScreen,
+    Camera, 
+
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
