@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuPage implements OnInit {
 
+  casaLinda = '../../assets/Casa feliz.png';
+  casaFea = '../../assets/Casa fea.png';
+
   constructor() { }
 
   ngOnInit() {
