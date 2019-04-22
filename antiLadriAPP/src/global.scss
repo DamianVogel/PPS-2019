@@ -13,7 +13,10 @@
 
 *{
     font-family: 'Fjalla One', sans-serif;
+    background: #79726f;
 }
+
+
 
 .spinner {
     margin: 100px auto;
@@ -32,7 +35,7 @@
     display: inline-block;
     position: absolute;
     top: 0;
-    background-color: #333;
+    background-color: #79726f;
     border-radius: 100%;
     
     -webkit-animation: sk-bounce 2.0s infinite ease-in-out;

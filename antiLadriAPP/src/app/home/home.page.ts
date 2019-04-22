@@ -17,7 +17,7 @@ import {ConexionUsuariosPage} from '../conexion-usuarios/conexion-usuarios.page'
 })
 export class HomePage {
 
-  rutaImagen: string;
+  rutaImagen = '../../assets/BandidoLogoSolo.png';
 
   usuarios : any;
 
@@ -37,7 +37,6 @@ export class HomePage {
     public navController: NavController)
   {
     this.buildForm();
-    this.rutaImagen='../../assets/Bandido 1024-pdf.png';
   }
 
   private buildForm(){
