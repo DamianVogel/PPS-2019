@@ -1,10 +1,8 @@
-<div class="spinner">
-  <div class="dot1"></div>
-  <div class="dot2"></div>
+<div *ngIf="showSplash" class="spinner">
+  <img class="dot1" src="../assets/BandidoLogoSolo.png" alt="">
+  <img class="dot2" src="../assets/SplashFirma.png" alt="">  
 </div>
 
-
-
-<ion-app>
-  <ion-router-outlet></ion-router-outlet>
+<ion-app> 
+  <ion-router-outlet *ngIf="!showSplash"></ion-router-outlet>
 </ion-app>
