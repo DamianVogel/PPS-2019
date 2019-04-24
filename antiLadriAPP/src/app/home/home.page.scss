@@ -21,15 +21,22 @@ ion-img{
 //    // background: $white-color;
 // }
 
+div{
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
 ion-button {
-    font-weight: 500;
+    margin: 10px 10px;
+    font-weight: 500;   
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
-ion-input{
-    text-align: center;
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    border-radius: 50px;
-}
+// ion-input{
+//     text-align: center;   
+// }
 
 // @media (min-width: 240px) and (max-width: 768px) {
 //     ion-grid {

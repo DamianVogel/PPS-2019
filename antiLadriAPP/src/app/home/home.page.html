@@ -30,27 +30,25 @@
             <form [formGroup]="formGroup">
             <div padding>
                          
-              <ion-item>
+              
                 <ion-input
-                  class="label"      
+                
                   formControlName="email"
                   type="email" 
                   placeholder="Ingrese su correo electronico...." 
                   autofocus="true"       
                 ></ion-input>
-              </ion-item>
+             
     
-              <ion-item>
+              
                 <ion-input 
-                  class="label"
+                  
                   formControlName="clave"
                   type="password" 
                   placeholder="Ingrese su contraseña"        
                 ></ion-input>
-              </ion-item>
-            </div>
-    
-            <div padding>
+              
+           
               
               <ion-button 
                 expand="full" 
@@ -59,14 +57,18 @@
                 [disabled]="formGroup.invalid"
                 >Conectarse
               </ion-button>
-      
+              
+              <ion-button 
+                color="tertiary" 
+                expand="full" 
+                (click)="mostrarUsuarios()"  
+                >Usuarios Test
+              </ion-button>
+
             </div>
-          </form>
-          <ion-card>   
-            <ion-button color="tertiary" expand="full" (click)="mostrarUsuarios()"  >Usuarios Test</ion-button>   
-          </ion-card> 
+          </form>         
+                      
           </ion-col>
         </ion-row>
       </ion-grid>
-
 </ion-content>
