@@ -26,6 +26,9 @@ ion-button {
 }
 ion-input{
     text-align: center;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
 }
 
 // @media (min-width: 240px) and (max-width: 768px) {
