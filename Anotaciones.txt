@@ -118,7 +118,7 @@ LINKS:
 
     CICLOS DE VIDA:
         https://cordova.apache.org/docs/en/dev/guide/platforms/android/index.html#what-makes-android-different
-    
+        https://forum.ionicframework.com/t/solved-camera-plugin-restart-app-on-android/117828/11   
     
         
 
