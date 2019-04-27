@@ -66,6 +66,9 @@ COMANDOS:
         -> ionic cordova run android --prod 
     CERTIFICADO
         -> https://medium.com/@thianlopezz/c%C3%B3mo-firmar-mis-apk-para-subir-mi-app-a-play-store-de-google-84cfe877b980
+    
+    ACEPTAR LICENCIAS
+        -> yes | sdkmanager --licenses ANDROID
 
 
 APPS:

@@ -17,6 +17,7 @@
 
 
 .splash {
+    padding-top: 70 px;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -32,9 +33,10 @@
 
 .spinner {
   transform: translateZ(1px);   
-  width: 60px;
-  height:110px;
+  width: 80px;
+  height:140px;
   margin: 6px;
+  margin-bottom: 20 px !important;
   background: #84c36e;
   -webkit-animation: sk-rotateplane 2s infinite ease-in-out;
   animation: sk-rotateplane 2s infinite ease-in-out;
@@ -42,8 +44,9 @@
 
 .firma {
   transform: translateZ(1px);   
-  width: 100px;
-  height:20px;
+  width: 210px;
+  height:50px;
+  margin-top: 30px !important;
   margin: 6px;
   background: #84c36e;
   -webkit-animation: sk-rotateplane 2s infinite ease-in-out;
