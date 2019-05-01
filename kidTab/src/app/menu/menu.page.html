@@ -38,31 +38,33 @@
     <!--COLORES-->
     <ion-row  *ngIf="listaColores">
       <ion-col no-padding no-margin>
-        <ion-button size="large" expand="full" no-margin responsive-lg>Color 1</ion-button>
+        <ion-button 
+          (click)="reproducir('azul')"
+        size="large" expand="full" no-margin responsive-lg>Azul</ion-button>
       </ion-col>
     </ion-row>
 
     <ion-row  *ngIf="listaColores">
       <ion-col no-padding no-margin>
-        <ion-button size="large" expand="full" no-margin responsive-lg>Color 2</ion-button>
+        <ion-button (click)="reproducir('rojo')" size="large" expand="full" no-margin responsive-lg>Rojo</ion-button>
       </ion-col>
     </ion-row>
 
     <ion-row  *ngIf="listaColores">
       <ion-col no-padding no-margin>
-        <ion-button size="large" expand="full" no-margin responsive-lg>Color 3</ion-button>
+        <ion-button  (click)="reproducir('verde')" size="large" expand="full" no-margin responsive-lg>Verde</ion-button>
       </ion-col>
     </ion-row>
 
     <ion-row  *ngIf="listaColores">
       <ion-col no-padding no-margin>
-        <ion-button size="large" expand="full" no-margin responsive-lg>Color 4</ion-button>
+        <ion-button (click)="reproducir('amarillo')" size="large" expand="full" no-margin responsive-lg>Amarillo</ion-button>
       </ion-col>
     </ion-row>
 
     <ion-row  *ngIf="listaColores">
       <ion-col no-padding no-margin>
-        <ion-button size="large" expand="full" no-margin responsive-lg>Color 5</ion-button>
+        <ion-button (click)="reproducir('violeta')" size="large" expand="full" no-margin responsive-lg>Violeta</ion-button>
       </ion-col>
     </ion-row>
 
@@ -73,27 +75,27 @@
     <!--NUMEROS-->
     <ion-row  *ngIf="listaNumeros">
       <ion-col no-padding no-margin>
-        <ion-button color="secondary" size="large" expand="full" no-margin responsive-lg>Numero 1</ion-button>
+        <ion-button (click)="reproducir('uno')" color="secondary" size="large" expand="full" no-margin responsive-lg>Numero 1</ion-button>
       </ion-col>
     </ion-row>
     <ion-row  *ngIf="listaNumeros">
       <ion-col no-padding no-margin>
-        <ion-button color="secondary" size="large" expand="full" no-margin responsive-lg>Numero 2</ion-button>
+        <ion-button (click)="reproducir('dos')" color="secondary" size="large" expand="full" no-margin responsive-lg>Numero 2</ion-button>
       </ion-col>
     </ion-row>
     <ion-row  *ngIf="listaNumeros">
       <ion-col no-padding no-margin>
-        <ion-button color="secondary" size="large" expand="full" no-margin responsive-lg>Numero 3</ion-button>
+        <ion-button (click)="reproducir('tres')" color="secondary" size="large" expand="full" no-margin responsive-lg>Numero 3</ion-button>
       </ion-col>
     </ion-row>
     <ion-row  *ngIf="listaNumeros">
       <ion-col no-padding no-margin>
-        <ion-button color="secondary" size="large" expand="full" no-margin responsive-lg>Numero 4</ion-button>
+        <ion-button (click)="reproducir('cuatro')" color="secondary" size="large" expand="full" no-margin responsive-lg>Numero 4</ion-button>
       </ion-col>
     </ion-row>
     <ion-row  *ngIf="listaNumeros">
       <ion-col no-padding no-margin>
-        <ion-button color="secondary" size="large" expand="full" no-margin responsive-lg>Numero 5</ion-button>
+        <ion-button (click)="reproducir('cinco')" color="secondary" size="large" expand="full" no-margin responsive-lg>Numero 5</ion-button>
       </ion-col>
     </ion-row>
 
@@ -104,28 +106,28 @@
     <!--ANIMALES-->
     <ion-row class="botones" *ngIf="listaAnimales">
       <ion-col no-padding no-margin>
-        <ion-button  color="tertiary" size="large" expand="full" no-margin responsive-lg>Animal 1</ion-button>
+        <ion-button (click)="reproducir('vaca')" color="tertiary" size="large" expand="full" no-margin responsive-lg>Vaca</ion-button>
       </ion-col>
     </ion-row>
 
     <ion-row class="botones"  *ngIf="listaAnimales">
       <ion-col no-padding no-margin>
-        <ion-button  color="tertiary" size="large" expand="full" no-margin responsive-lg>Animal 2</ion-button>
+        <ion-button (click)="reproducir('caballo')" color="tertiary" size="large" expand="full" no-margin responsive-lg>Caballo</ion-button>
       </ion-col>
     </ion-row>
     <ion-row class="botones" *ngIf="listaAnimales">
       <ion-col no-padding no-margin>
-        <ion-button  color="tertiary" size="large" expand="full" no-margin responsive-lg>Animal 3</ion-button>
+        <ion-button (click)="reproducir('gallo')" color="tertiary" size="large" expand="full" no-margin responsive-lg>Gallo</ion-button>
       </ion-col>
     </ion-row>
     <ion-row class="botones" *ngIf="listaAnimales">
       <ion-col no-padding no-margin>
-        <ion-button  color="tertiary" size="large" expand="full" no-margin responsive-lg>Animal 4</ion-button>
+        <ion-button (click)="reproducir('oveja')"  color="tertiary" size="large" expand="full" no-margin responsive-lg>Oveja</ion-button>
       </ion-col>
     </ion-row>
     <ion-row class="botones"  *ngIf="listaAnimales">
       <ion-col no-padding no-margin>
-        <ion-button  color="tertiary" size="large" expand="full" no-margin responsive-lg>Animal 5</ion-button>
+        <ion-button  (click)="reproducir('pato')" color="tertiary" size="large" expand="full" no-margin responsive-lg>Pato</ion-button>
       </ion-col>
     </ion-row>
 
