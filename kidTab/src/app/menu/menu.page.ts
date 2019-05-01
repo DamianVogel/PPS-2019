@@ -374,35 +374,35 @@ export class MenuPage implements OnInit {
             
             case 'uno':
               var audioAzul = new Audio();
-              audioAzul.src = '../../assets/espanol/numero/uno.mp3';          
+              audioAzul.src = '../../assets/espanol/numeros/uno.mp3';          
               audioAzul.load();            
               audioAzul.play();
               break;
 
             case 'dos':
               let audioRojo = new Audio();
-              audioRojo.src = '../../assets/espanol/numero/dos.mp3';        
+              audioRojo.src = '../../assets/espanol/numeros/dos.mp3';        
               audioRojo.load();            
               audioRojo.play();
               break; 
             
             case 'tres':
               var audioVerde = new Audio();
-              audioVerde.src = '../../assets/espanol/numero/tres.mp3';        
+              audioVerde.src = '../../assets/espanol/numeros/tres.mp3';        
               audioVerde.load();            
               audioVerde.play();
               break;
             
             case 'cuatro':
               var audioAmarillo = new Audio();
-              audioAmarillo.src = '../../assets/espanol/numero/cuatro.mp3';        
+              audioAmarillo.src = '../../assets/espanol/numeros/cuatro.mp3';        
               audioAmarillo.load();            
               audioAmarillo.play();
               break;
             
             case 'cinco':
               var audioVioleta = new Audio();
-              audioVioleta.src = '../../assets/espanol/numero/cinco.mp3';        
+              audioVioleta.src = '../../assets/espanol/numeros/cinco.mp3';        
               audioVioleta.load();            
               audioVioleta.play();
               break;
@@ -416,35 +416,35 @@ export class MenuPage implements OnInit {
             
             case 'uno':
               var audioAzul = new Audio();
-              audioAzul.src = '../../assets/ingles/numero/uno.mp3';          
+              audioAzul.src = '../../assets/ingles/numeros/uno.mp3';          
               audioAzul.load();            
               audioAzul.play();
               break;
 
             case 'dos':
               let audioRojo = new Audio();
-              audioRojo.src = '../../assets/ingles/numero/dos.mp3';        
+              audioRojo.src = '../../assets/ingles/numeros/dos.mp3';        
               audioRojo.load();            
               audioRojo.play();
               break; 
             
             case 'tres':
               var audioVerde = new Audio();
-              audioVerde.src = '../../assets/ingles/numero/tres.mp3';        
+              audioVerde.src = '../../assets/ingles/numeros/tres.mp3';        
               audioVerde.load();            
               audioVerde.play();
               break;
             
             case 'cuatro':
               var audioAmarillo = new Audio();
-              audioAmarillo.src = '../../assets/ingles/numero/cuatro.mp3';        
+              audioAmarillo.src = '../../assets/ingles/numeros/cuatro.mp3';        
               audioAmarillo.load();            
               audioAmarillo.play();
               break;
             
             case 'cinco':
               var audioVioleta = new Audio();
-              audioVioleta.src = '../../assets/ingles/numero/cinco.mp3';        
+              audioVioleta.src = '../../assets/ingles/numeros/cinco.mp3';        
               audioVioleta.load();            
               audioVioleta.play();
               break;
@@ -459,35 +459,35 @@ export class MenuPage implements OnInit {
             
             case 'uno':
               var audioAzul = new Audio();
-              audioAzul.src = '../../assets/aleman/numero/uno.mp3';          
+              audioAzul.src = '../../assets/aleman/numeros/uno.mp3';          
               audioAzul.load();            
               audioAzul.play();
               break;
 
             case 'dos':
               let audioRojo = new Audio();
-              audioRojo.src = '../../assets/aleman/numero/dos.mp3';        
+              audioRojo.src = '../../assets/aleman/numeros/dos.mp3';        
               audioRojo.load();            
               audioRojo.play();
               break; 
             
             case 'tres':
               var audioVerde = new Audio();
-              audioVerde.src = '../../assets/aleman/numero/tres.mp3';        
+              audioVerde.src = '../../assets/aleman/numeros/tres.mp3';        
               audioVerde.load();            
               audioVerde.play();
               break;
             
             case 'cuatro':
               var audioAmarillo = new Audio();
-              audioAmarillo.src = '../../assets/aleman/numero/cuatro.mp3';        
+              audioAmarillo.src = '../../assets/aleman/numeros/cuatro.mp3';        
               audioAmarillo.load();            
               audioAmarillo.play();
               break;
             
             case 'cinco':
               var audioVioleta = new Audio();
-              audioVioleta.src = '../../assets/aleman/numero/cinco.mp3';        
+              audioVioleta.src = '../../assets/aleman/numeros/cinco.mp3';        
               audioVioleta.load();            
               audioVioleta.play();
               break;
