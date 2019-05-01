@@ -14,6 +14,10 @@ export class MenuPage implements OnInit {
   listaNumeros:boolean;
   listaAnimales:boolean;
 
+  opcion: any;
+  imgOpcion: any;
+  idioma: any;
+
 
 
   constructor() { 
@@ -23,8 +27,56 @@ export class MenuPage implements OnInit {
   }
 
   ngOnInit() {
+    this.opcion = 1;
+    this.idioma = 1;
+    this.cambiarOpcion();
+    
+  
   }
 
+  cambiarOpcion(){
+    switch(this.opcion){
+      case 1:
+        this.mostrarColores();
+        this.opcion = 2;
+        break;
+
+      case 2:
+        this.mostrarNumeros();
+        this.opcion = 3;
+        break;
+
+      case 3:
+        this.opcion = 1;
+        this.mostrarAnimales();
+        break;
+
+    }
+    
+  }
+
+  cambiarIdioma(){
+    switch(this.idioma){
+      case 1:
+        //this.mostrarColores();
+        this.idioma = 2;
+        
+        break;
+
+      case 2:
+        //this.mostrarNumeros();
+        this.idioma = 3;
+        break;
+
+      case 3:
+        this.idioma = 1;
+        //this.mostrarAnimales();
+        break;
+
+    }
+  }
+  
+  
   mostrarColores(){
     this.listaColores=true;
     this.listaNumeros=false;
@@ -45,6 +97,7 @@ export class MenuPage implements OnInit {
     
   }
 
+  
 
 
 }

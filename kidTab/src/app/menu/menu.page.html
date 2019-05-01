@@ -1,44 +1,36 @@
 <ion-content no-padding no-margin>
   <ion-grid no-padding no-margin>
-    <ion-row  no-padding no-margin *ngIf="!listaColores">
+    <ion-row  no-padding no-margin>
       <ion-col no-padding no-margin>
         <ion-button 
-          (click)="mostrarColores()"
+          (click)="cambiarOpcion()"
           size="large" 
           expand="full" 
           no-margin
           no-padding 
           responsive-lg
-          >Colores
+        >
+          <img *ngIf="listaAnimales" style="width : 100% ; height : 100%" no-margin no-padding src="../../assets/que-comen-animales.jpg">
+          <img *ngIf="listaNumeros" style="width : 100% ; height : 100%" no-margin no-padding src="../../assets/numeros.jpg">
+          <img *ngIf="listaColores" style="width : 100% ; height : 100%" no-margin no-padding src="../../assets/colores.jpg">
+          
         </ion-button>
+       
+      
+      
       </ion-col>
     </ion-row>
 
-    <ion-row  *ngIf="!listaNumeros">
+    <ion-row no-padding no-margin >
       <ion-col no-padding no-margin>
-        <ion-button 
-          (click)="mostrarNumeros()"
-          size="large" 
-          expand="full" 
-          no-margin 
-          responsive-lg
-          >Numeros</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row  *ngIf="!listaAnimales">
-      <ion-col no-padding no-margin>
-        <ion-button 
-          (click)="mostrarAnimales()"  
-          size="large" 
-          expand="full" 
-          no-margin 
-          responsive-lg
-          >Animales</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col no-padding no-margin>
-        <ion-button color="medium" size="large" expand="full" no-margin responsive-lg>Idioma</ion-button>
+        <ion-button  
+            (click)="cambiarIdioma()"
+            color="medium" size="large" expand="full" no-margin responsive-lg>
+            <img *ngIf="idioma == 1" style="width : 100% ; height : 100%" no-margin no-padding src="../../assets/espana.png">
+            <img *ngIf="idioma == 2" style="width : 100% ; height : 100%" no-margin no-padding src="../../assets/ingles.jpg">
+            <img *ngIf="idioma == 3" style="width : 100% ; height : 100%" no-margin no-padding src="../../assets/alemania.svg">
+          
+        </ion-button>
       </ion-col>
     </ion-row>
     
@@ -50,21 +42,94 @@
       </ion-col>
     </ion-row>
 
+    <ion-row  *ngIf="listaColores">
+      <ion-col no-padding no-margin>
+        <ion-button size="large" expand="full" no-margin responsive-lg>Color 2</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row  *ngIf="listaColores">
+      <ion-col no-padding no-margin>
+        <ion-button size="large" expand="full" no-margin responsive-lg>Color 3</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row  *ngIf="listaColores">
+      <ion-col no-padding no-margin>
+        <ion-button size="large" expand="full" no-margin responsive-lg>Color 4</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row  *ngIf="listaColores">
+      <ion-col no-padding no-margin>
+        <ion-button size="large" expand="full" no-margin responsive-lg>Color 5</ion-button>
+      </ion-col>
+    </ion-row>
+
+
+
+
+
     <!--NUMEROS-->
     <ion-row  *ngIf="listaNumeros">
       <ion-col no-padding no-margin>
         <ion-button color="secondary" size="large" expand="full" no-margin responsive-lg>Numero 1</ion-button>
       </ion-col>
     </ion-row>
-
-    <!--ANIMALES-->
-    <ion-row  *ngIf="listaAnimales">
+    <ion-row  *ngIf="listaNumeros">
       <ion-col no-padding no-margin>
-        <ion-button color="tertiary" size="large" expand="full" no-margin responsive-lg>Animal 1</ion-button>
+        <ion-button color="secondary" size="large" expand="full" no-margin responsive-lg>Numero 2</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row  *ngIf="listaNumeros">
+      <ion-col no-padding no-margin>
+        <ion-button color="secondary" size="large" expand="full" no-margin responsive-lg>Numero 3</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row  *ngIf="listaNumeros">
+      <ion-col no-padding no-margin>
+        <ion-button color="secondary" size="large" expand="full" no-margin responsive-lg>Numero 4</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row  *ngIf="listaNumeros">
+      <ion-col no-padding no-margin>
+        <ion-button color="secondary" size="large" expand="full" no-margin responsive-lg>Numero 5</ion-button>
       </ion-col>
     </ion-row>
 
-  
+
+
+
+
+    <!--ANIMALES-->
+    <ion-row class="botones" *ngIf="listaAnimales">
+      <ion-col no-padding no-margin>
+        <ion-button  color="tertiary" size="large" expand="full" no-margin responsive-lg>Animal 1</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="botones"  *ngIf="listaAnimales">
+      <ion-col no-padding no-margin>
+        <ion-button  color="tertiary" size="large" expand="full" no-margin responsive-lg>Animal 2</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="botones" *ngIf="listaAnimales">
+      <ion-col no-padding no-margin>
+        <ion-button  color="tertiary" size="large" expand="full" no-margin responsive-lg>Animal 3</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="botones" *ngIf="listaAnimales">
+      <ion-col no-padding no-margin>
+        <ion-button  color="tertiary" size="large" expand="full" no-margin responsive-lg>Animal 4</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="botones"  *ngIf="listaAnimales">
+      <ion-col no-padding no-margin>
+        <ion-button  color="tertiary" size="large" expand="full" no-margin responsive-lg>Animal 5</ion-button>
+      </ion-col>
+    </ion-row>
+
+     
   
   
   
