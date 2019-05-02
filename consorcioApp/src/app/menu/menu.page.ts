@@ -44,12 +44,27 @@ export class MenuPage implements OnInit {
   
   
   sacarFoto(){
+
+    this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.CAMERA).then(
+      result =>{ console.log('Has permission?',result.hasPermission)
+      if(!result.hasPermission){
+        console.log("entro a pedir permisos");
+        this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA)
+        
+      }
+      
+
+    },
+      err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA)
+    );
+  
+
+
     this.camera.getPicture(this.options).then((imageData) => {
     // imageData is either a base64 encoded string or a file URI
     // If it's base64 (DATA_URL):
-      //this.imagenTomada = 'data:image/jpeg;base64,' + imageData;
-      
-      //this.camera.cleanup();
+      this.imagenTomada = 'data:image/jpeg;base64,' + imageData;
+            //this.camera.cleanup();
      
     }, (err) => {
     // Handle error
