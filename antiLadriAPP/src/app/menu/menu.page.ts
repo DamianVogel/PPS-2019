@@ -38,7 +38,7 @@ export class MenuPage implements OnInit {
   gyrascope(){
     
     let options: GyroscopeOptions = {
-      frequency: 1000
+      frequency: 500
    };
    
    this.gyroscope.getCurrent(options)
