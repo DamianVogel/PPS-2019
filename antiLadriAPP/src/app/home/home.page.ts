@@ -113,7 +113,7 @@ export class HomePage {
           flagLogin = true;
           this.loginToast(flagLogin);            
           
-          //timer(2500).subscribe(() => this.navController.navigateForward('/menu')); 
+          timer(2500).subscribe(() => this.navController.navigateForward('/menu')); 
           
           break;
         }

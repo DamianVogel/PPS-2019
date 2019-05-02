@@ -12,14 +12,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { ConexionUsuariosPage } from '../app/conexion-usuarios/conexion-usuarios.page';
 import {ConexionUsuariosPageModule} from '../app/conexion-usuarios/conexion-usuarios.module';
 
+import { Gyroscope, GyroscopeOrientation, GyroscopeOptions, GyroscopeOriginal } from '@ionic-native/gyroscope';
+import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion';
+
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [ConexionUsuariosPage],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,ConexionUsuariosPageModule],
+  imports: [
+    BrowserModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule,
+    ConexionUsuariosPageModule
+  ],
   providers: [
     StatusBar,
-    SplashScreen,
+    SplashScreen,  
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    
+    
   ],
   bootstrap: [AppComponent]
 })
