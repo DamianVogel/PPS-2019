@@ -3,7 +3,7 @@
     <name>AntiLadriApp</name>
     <description>Una aplicacion para que no te choreen el cel</description>
     <author email="rodolfovogel@gmail.com" href="http://github.com/DamianVogel">DevDV</author>
-    <content original-src="index.html" src="http://192.168.0.18:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -83,6 +83,9 @@
     <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
     <plugin name="cordova-plugin-ionic-webview" spec="^3.0.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
-    <engine name="android" spec="8.0.0" />
     <allow-navigation href="http://192.168.0.18:8100" sessionid="f635bf07" />
+    <plugin name="cordova-plugin-gyroscope" spec="0.1.4" />
+    <plugin name="cordova-plugin-device-motion" spec="2.0.1" />
+    <plugin name="cordova-plugin-flashlight" spec="3.2.0" />
+    <engine name="android" spec="8.0.0" />
 </widget>

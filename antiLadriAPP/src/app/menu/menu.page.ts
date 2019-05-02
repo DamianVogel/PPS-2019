@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 //import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion';
 import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion/ngx';
 import { Gyroscope, GyroscopeOrientation, GyroscopeOptions } from '@ionic-native/gyroscope/ngx';
+import { Subscription } from 'rxjs';
+import { Flashlight } from '@ionic-native/flashlight/ngx';
 
 @Component({
   selector: 'app-menu',
@@ -19,10 +21,12 @@ export class MenuPage implements OnInit {
   public accY:any;
   public accZ:any;
 
+  public subscription: any;
 
   constructor(
     private gyroscope: Gyroscope,
-    private deviceMotion: DeviceMotion
+    private deviceMotion: DeviceMotion,
+    private flashlight: Flashlight
   ) { 
 
   }
@@ -73,18 +77,43 @@ export class MenuPage implements OnInit {
     );
     
     // Watch device acceleration
-    var subscription = this.deviceMotion.watchAcceleration().subscribe((acceleration: DeviceMotionAccelerationData) => {
+    this.subscription = this.deviceMotion.watchAcceleration({frequency:200}).subscribe((acceleration: DeviceMotionAccelerationData) => {
       console.log(acceleration);
       this.accX=acceleration.x;
       this.accY=acceleration.y;
       this.accZ=acceleration.z;
+      
+      if(this.accY > 10){
+        console.log("Esta vertical");
+        this.flashlight.switchOn();
+      }
+      else{
+        this.flashlight.switchOff();
+      }
+
+      if(this.accX > 3){
+        console.log("Esta orientado hacia la izquierda");
+      }
+
+      if(this.accX < -3){
+        console.log("Esta orientado hacia la derecha");
+      }
+
+      
+
+    
     });
     
     
+    
   
   
   
   
+  }
+
+  Frenar(){
+      this.subscription.unsubscribe();
   }
 
 }

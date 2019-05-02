@@ -14,6 +14,7 @@ import {ConexionUsuariosPageModule} from '../app/conexion-usuarios/conexion-usua
 
 import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion/ngx';
 import { Gyroscope, GyroscopeOrientation, GyroscopeOptions } from '@ionic-native/gyroscope/ngx';
+import { Flashlight } from '@ionic-native/flashlight/ngx';
 
 
 
@@ -31,7 +32,8 @@ import { Gyroscope, GyroscopeOrientation, GyroscopeOptions } from '@ionic-native
     SplashScreen,  
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     Gyroscope,
-    DeviceMotion
+    DeviceMotion,
+    Flashlight
     
     
   ],
