@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Gyroscope, GyroscopeOrientation, GyroscopeOptions } from '@ionic-native/gyroscope';
-import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion';
-
-
+//import { Gyroscope, GyroscopeOrientation, GyroscopeOptions } from '@ionic-native/gyroscope';
+//import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion';
+import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion/ngx';
+import { Gyroscope, GyroscopeOrientation, GyroscopeOptions } from '@ionic-native/gyroscope/ngx';
 
 @Component({
   selector: 'app-menu',
@@ -80,6 +80,11 @@ export class MenuPage implements OnInit {
       this.accZ=acceleration.z;
     });
     
+    
+  
+  
+  
+  
   }
 
 }

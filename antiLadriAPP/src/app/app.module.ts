@@ -12,8 +12,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { ConexionUsuariosPage } from '../app/conexion-usuarios/conexion-usuarios.page';
 import {ConexionUsuariosPageModule} from '../app/conexion-usuarios/conexion-usuarios.module';
 
-import { Gyroscope, GyroscopeOrientation, GyroscopeOptions, GyroscopeOriginal } from '@ionic-native/gyroscope';
-import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion';
+import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion/ngx';
+import { Gyroscope, GyroscopeOrientation, GyroscopeOptions } from '@ionic-native/gyroscope/ngx';
 
 
 
@@ -29,7 +29,9 @@ import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device
   providers: [
     StatusBar,
     SplashScreen,  
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    Gyroscope,
+    DeviceMotion
     
     
   ],
