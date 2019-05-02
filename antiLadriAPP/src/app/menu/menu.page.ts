@@ -5,6 +5,7 @@ import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device
 import { Gyroscope, GyroscopeOrientation, GyroscopeOptions } from '@ionic-native/gyroscope/ngx';
 import { timer } from 'rxjs';
 import { Flashlight } from '@ionic-native/flashlight/ngx';
+import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 
 @Component({
   selector: 'app-menu',
@@ -26,7 +27,8 @@ export class MenuPage implements OnInit {
   constructor(
     private gyroscope: Gyroscope,
     private deviceMotion: DeviceMotion,
-    private flashlight: Flashlight
+    private flashlight: Flashlight,
+    private androidPermissions: AndroidPermissions
   ) { 
 
   }
@@ -34,6 +36,15 @@ export class MenuPage implements OnInit {
 
 
   ngOnInit() {
+    this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.CAMERA).then(
+      result =>{ console.log('Has permission?',result.hasPermission)
+      if(!result.hasPermission){
+        this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA)
+      }
+    
+    },
+      err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA)
+    );
   
 
   }
@@ -68,6 +79,11 @@ export class MenuPage implements OnInit {
   }
 
   Accelerometer(){
+     
+    var flag = true;
+    var flagIzq =  true;
+    var flagDer = true;
+
     this.deviceMotion.getCurrentAcceleration().then(
       (acceleration: DeviceMotionAccelerationData) =>
        console.log(acceleration),
@@ -76,45 +92,84 @@ export class MenuPage implements OnInit {
  
     );
     
-    // Watch device acceleration
-    this.subscription = this.deviceMotion.watchAcceleration({frequency:200}).subscribe((acceleration: DeviceMotionAccelerationData) => {
-      console.log(acceleration);
-      this.accX=acceleration.x;
-      this.accY=acceleration.y;
-      this.accZ=acceleration.z;
+    
+    
+      // Watch device acceleration
+      this.subscription = this.deviceMotion.watchAcceleration({frequency:200}).subscribe((acceleration: DeviceMotionAccelerationData) => {
+        console.log(acceleration);
+        this.accX=acceleration.x;
+        this.accY=acceleration.y;
+        this.accZ=acceleration.z;
+        
+        //vertical y linterna
+        if(this.accY > 3 && flag == true){
+          flag = false;
+          console.log("Esta vertical");
+          
+          timer(5000).subscribe(() => {
+            if(this.accY > 3){
+              flag = false;
+              this.flashlight.switchOn();
+            }
+          
+          
+          })
+        } else if(this.accY < 3  && flag == false){
+          
+          this.flashlight.switchOff();
+          flag = true;
+        }
+
+        
+        //izquierda 
+        if(this.accX > 3 && flagIzq == true){
+            flagIzq = false;
+            console.log("Esta a la izquierda");
+            
+            timer(500).subscribe(() => {
+              if(this.accX > 3){
+                flagIzq = false;
+                //Comienza a Reproducir
+                console.log("Comienza a Reproducir");
+              }
+            }); 
+          
+        }else if(this.accX < 3  && flagIzq == false){
+            
+          //Para de reproducir this.flashlight.switchOff();
+          console.log("Detiene la Reproduccion"); 
+          flagIzq = true;
+        }
+        
+         
+        //derecha 
+        if(this.accX < -3 && flagDer == true){
+          flagDer = false;
+          console.log("Esta orientado hacia la derecha");
+          
+          timer(500).subscribe(() => {
+            if(this.accX < -3){
+              flagDer = false;
+              //Comienza a Reproducir
+              console.log("Comienza a Reproducir");
+            }
+          
+          
+          })
+        } else if(this.accX > -3  && flagDer == false){
+        
+          //parar de reproducir
+          console.log("Detiene la Reproduccion"); 
+          flagDer = true;
+        }
+
+        
+
       
-
-      if(this.accY > 3){
-        
-        console.log("Esta vertical");
-        
-        timer(5000).subscribe(() => {
-          if(this.accY > 3){
-            this.flashlight.switchOn();
-          }  
-        
-        
-        })
-      }
-      else{
-        this.flashlight.switchOff();
-      }
-
-      if(this.accX > 3){
-        console.log("Esta orientado hacia la izquierda");
-      }
-
-      if(this.accX < -3){
-        console.log("Esta orientado hacia la derecha");
-      }
-
+      });
       
-
-    
-    });
-    
-    
-    
+      
+      
   
   
   
