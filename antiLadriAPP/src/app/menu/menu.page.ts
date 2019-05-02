@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 //import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion';
 import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion/ngx';
 import { Gyroscope, GyroscopeOrientation, GyroscopeOptions } from '@ionic-native/gyroscope/ngx';
-import { Subscription } from 'rxjs';
+import { timer } from 'rxjs';
 import { Flashlight } from '@ionic-native/flashlight/ngx';
 
 @Component({
@@ -83,9 +83,18 @@ export class MenuPage implements OnInit {
       this.accY=acceleration.y;
       this.accZ=acceleration.z;
       
-      if(this.accY > 10){
+
+      if(this.accY > 3){
+        
         console.log("Esta vertical");
-        this.flashlight.switchOn();
+        
+        timer(5000).subscribe(() => {
+          if(this.accY > 3){
+            this.flashlight.switchOn();
+          }  
+        
+        
+        })
       }
       else{
         this.flashlight.switchOff();
