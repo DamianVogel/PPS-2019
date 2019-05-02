@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { NavController } from '@ionic/angular';
+import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 
 @Component({
   selector: 'app-menu',
@@ -15,7 +16,7 @@ export class MenuPage implements OnInit {
   imagenTomada: string;
 
   options: CameraOptions = {
-    quality: 100,
+    quality: 10,
     destinationType: this.camera.DestinationType.FILE_URI,
     encodingType: this.camera.EncodingType.JPEG,
     mediaType: this.camera.MediaType.PICTURE
@@ -23,10 +24,21 @@ export class MenuPage implements OnInit {
 
   constructor(
     private camera: Camera,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private androidPermissions: AndroidPermissions
     ) { }
 
   ngOnInit() {
+    this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.CAMERA).then(
+      result =>{ console.log('Has permission?',result.hasPermission)
+      if(!result.hasPermission){
+        this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA)
+      }
+    
+    },
+      err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA)
+    );
+  
   }
 
   

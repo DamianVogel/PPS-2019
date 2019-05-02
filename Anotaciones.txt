@@ -178,3 +178,9 @@ COLOR QR: #8CCC75
     Fondo 84c36e
 
 OCR A Extended
+
+DEPENDENCIAS
+
+    PERMISOS
+        ionic cordova plugin add cordova-plugin-android-permissions
+        npm install @ionic-native/android-permissions
