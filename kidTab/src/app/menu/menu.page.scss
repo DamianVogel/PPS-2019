@@ -8,28 +8,33 @@ ion-content{
 
 ion-grid{
     justify-content: space-around;
-}
-
-ion-row{
+    //padding: 20px 20px 0px 0px;
     height: 100%;
-    min-height: 100%;
-     //position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    bottom: 0 !important;
-    right: 0 !important;
+    ion-row{
+        height: 14.28571428%;
+        top: 0 !important;
+        left: 0 !important;
+        bottom: 0 !important;
+        right: 0 !important;
+    
+        ion-button{
+            height: 100%;
+            position: relative;
+            background-size: cover;
+            
+            img{
+                display: flex;
+                justify-content: center; /* align horizontal */
+                align-items: center; /* align vertical */
+                height: 50px;
+                width:  80px;
+            }
+        }
+
+    
+    }
+
 }
 
-ion-button img{
-    position: relative;
-    background-size: cover;
-}
 
 
-// .botones{
-//     height: 12%;
-// }
-
-// .idioma{
-//     height: 20%;
-// }
