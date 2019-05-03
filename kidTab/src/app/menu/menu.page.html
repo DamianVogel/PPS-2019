@@ -107,28 +107,41 @@
     <!--ANIMALES-->
     <ion-row class="botones" *ngIf="listaAnimales">
       <ion-col no-padding no-margin>
-        <ion-button (click)="reproducir('vaca')" color="tertiary" size="large" expand="full" no-margin responsive-lg>Vaca</ion-button>
+        <ion-button (click)="reproducir('vaca')" color="tertiary" size="large" expand="full" no-margin responsive-lg>
+          <img class="listaAnimales" *ngIf="listaAnimales" no-margin no-padding src="../../assets/Animales.PNG">
+        </ion-button>
       </ion-col>
     </ion-row>
 
     <ion-row class="botones"  *ngIf="listaAnimales">
       <ion-col no-padding no-margin>
-        <ion-button (click)="reproducir('caballo')" color="tertiary" size="large" expand="full" no-margin responsive-lg>Caballo</ion-button>
+        <ion-button (click)="reproducir('caballo')" color="tertiary" size="large" expand="full" no-margin responsive-lg>
+          <img class="listaAnimales" *ngIf="listaAnimales" no-margin no-padding src="../../assets/Animales.PNG">
+        </ion-button>
       </ion-col>
     </ion-row>
+    
     <ion-row class="botones" *ngIf="listaAnimales">
       <ion-col no-padding no-margin>
-        <ion-button (click)="reproducir('gallo')" color="tertiary" size="large" expand="full" no-margin responsive-lg>Gallo</ion-button>
+        <ion-button (click)="reproducir('gallo')" color="tertiary" size="large" expand="full" no-margin responsive-lg>
+          <img class="listaAnimales" *ngIf="listaAnimales" no-margin no-padding src="../../assets/Animales.PNG">
+        </ion-button>
       </ion-col>
     </ion-row>
+    
     <ion-row class="botones" *ngIf="listaAnimales">
       <ion-col no-padding no-margin>
-        <ion-button (click)="reproducir('oveja')"  color="tertiary" size="large" expand="full" no-margin responsive-lg>Oveja</ion-button>
+        <ion-button (click)="reproducir('oveja')"  color="tertiary" size="large" expand="full" no-margin responsive-lg>
+          <img class="listaAnimales" *ngIf="listaAnimales" no-margin no-padding src="../../assets/Animales.PNG">
+        </ion-button>
       </ion-col>
     </ion-row>
+    
     <ion-row class="botones"  *ngIf="listaAnimales">
       <ion-col no-padding no-margin>
-        <ion-button  (click)="reproducir('pato')" color="tertiary" size="large" expand="full" no-margin responsive-lg>Pato</ion-button>
+        <ion-button class="listaAnimales" (click)="reproducir('pato')" color="tertiary" size="large" expand="full" no-margin responsive-lg>
+          <img class="listaAnimales" *ngIf="listaAnimales" no-margin no-padding src="../../assets/Animales.PNG">
+        </ion-button>
       </ion-col>
     </ion-row>
 
