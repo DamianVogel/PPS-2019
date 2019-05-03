@@ -23,6 +23,7 @@ export class MenuPage implements OnInit {
   public accZ:any;
 
   public subscription: any;
+  public activar: boolean = true;
 
   constructor(
     private gyroscope: Gyroscope,
@@ -79,7 +80,7 @@ export class MenuPage implements OnInit {
   }
 
   Accelerometer(){
-     
+    this.activar=false;
     var flag = true;
     var flagIzq =  true;
     var flagDer = true;
@@ -178,7 +179,8 @@ export class MenuPage implements OnInit {
 
   Frenar(){
       this.subscription.unsubscribe();
-  }
+      this.activar = true;
+    }
 
 }
 

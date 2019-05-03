@@ -1,36 +1,21 @@
 
 <ion-content padding>
-  <!-- <ion-item> 
-      <ion-label>X orientation</ion-label>
-    <ion-input type="text" [(ngModel)]="xOrient"></ion-input>
-  </ion-item>
-  <ion-item> 
-      <ion-label>Y orientation</ion-label>
-      <ion-input type="text" [(ngModel)]="yOrient"></ion-input>
-    </ion-item>
-    <ion-item> 
-        <ion-label>Z orientation</ion-label>
-        <ion-input type="text" [(ngModel)]="zOrient"></ion-input>
-      </ion-item>
-      <ion-item> 
-          <ion-label>Time Stamp</ion-label>
-          <ion-input type="text" [(ngModel)]="timestamp"></ion-input>
-        </ion-item>
+  
+    <ion-card>
+        <ion-card-header>
+          
+          <ion-card-title *ngIf="activar">ACTIVAR</ion-card-title>
+          <ion-card-title *ngIf="!activar">DESACTIVAR</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          <img (click)="Accelerometer()" *ngIf="activar" no-margin no-padding src="../../assets/BOTON ENCENDIDO.JPG">
+          <img (click)="Frenar()" *ngIf="!activar" no-margin no-padding src="../../assets/Boton Apagado.JPG">         
+        </ion-card-content>
+    </ion-card>
 
-        <button ion-button (click)="gyrascope()" full>click</button> -->
 
-        <ion-item> 
-            <ion-label>Acceleration X</ion-label>
-            <ion-input type="text" [(ngModel)]="accX"></ion-input>
-          </ion-item>
-          <ion-item> 
-              <ion-label>Acceleration Y</ion-label>
-              <ion-input type="text" [(ngModel)]="accY"></ion-input>
-            </ion-item>
-            <ion-item> 
-                <ion-label>Acceleration Z</ion-label>
-                <ion-input type="text" [(ngModel)]="accZ"></ion-input>
-              </ion-item>
-          <button ion-button (click)="Accelerometer()" full>ACTIVAR</button>
-          <button ion-button (click)="Frenar()" full>FRENAR</button>    
+
+          <!-- <button ion-button (click)="Accelerometer()" full>ACTIVAR</button>
+          <button ion-button (click)="Frenar()" full>FRENAR</button>     -->
 </ion-content>
