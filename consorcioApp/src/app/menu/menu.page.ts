@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { NavController } from '@ionic/angular';
-import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+//import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 
 @Component({
   selector: 'app-menu',
@@ -25,19 +25,11 @@ export class MenuPage implements OnInit {
   constructor(
     private camera: Camera,
     private navCtrl: NavController,
-    private androidPermissions: AndroidPermissions
+    //private androidPermissions: AndroidPermissions
     ) { }
 
   ngOnInit() {
-    this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.CAMERA).then(
-      result =>{ console.log('Has permission?',result.hasPermission)
-      if(!result.hasPermission){
-        this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA)
-      }
     
-    },
-      err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA)
-    );
   
   }
 
@@ -45,18 +37,18 @@ export class MenuPage implements OnInit {
   
   sacarFoto(){
 
-    this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.CAMERA).then(
-      result =>{ console.log('Has permission?',result.hasPermission)
-      if(!result.hasPermission){
-        console.log("entro a pedir permisos");
-        this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA)
+    // this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.CAMERA).then(
+    //   result =>{ console.log('Has permission?',result.hasPermission)
+    //   if(!result.hasPermission){
+    //     console.log("entro a pedir permisos");
+    //     this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA)
         
-      }
+    //   }
       
 
-    },
-      err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA)
-    );
+    // },
+    //   err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA)
+    // );
   
 
 

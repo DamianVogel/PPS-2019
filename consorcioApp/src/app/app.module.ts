@@ -16,7 +16,7 @@ import { ConexionUsuariosPage } from '../app/conexion-usuarios/conexion-usuarios
 import {ConexionUsuariosPageModule} from '../app/conexion-usuarios/conexion-usuarios.module';
 
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
-import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+//import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,7 +32,7 @@ import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
     StatusBar,
     SplashScreen,
     Camera, 
-    AndroidPermissions,
+    //AndroidPermissions,
 
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
