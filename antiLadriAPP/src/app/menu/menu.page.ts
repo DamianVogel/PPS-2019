@@ -107,10 +107,18 @@ export class MenuPage implements OnInit {
           flag = false;
           console.log("Esta vertical");
           
+          this.flashlight.switchOn();
           timer(5000).subscribe(() => {
             if(this.accY > 3){
               flag = false;
-              this.flashlight.switchOn();
+              this.flashlight.switchOff();
+              console.log("Comienza a Reproducir");
+              let audioIzq = new Audio();
+              audioIzq.src = '../../assets/fiuuu.mp3';          
+              audioIzq.load();            
+              audioIzq.play();
+              
+            
             }
           
           
@@ -132,12 +140,17 @@ export class MenuPage implements OnInit {
                 flagIzq = false;
                 //Comienza a Reproducir
                 console.log("Comienza a Reproducir");
+                let audioIzq = new Audio();
+                audioIzq.src = '../../assets/larga.mp3';          
+                audioIzq.load();            
+                audioIzq.play();
               }
             }); 
           
         }else if(this.accX < 3  && flagIzq == false){
             
           //Para de reproducir this.flashlight.switchOff();
+          
           console.log("Detiene la Reproduccion"); 
           flagIzq = true;
         }
@@ -151,7 +164,10 @@ export class MenuPage implements OnInit {
           timer(500).subscribe(() => {
             if(this.accX < -3){
               flagDer = false;
-              //Comienza a Reproducir
+              let audioIzq = new Audio();
+              audioIzq.src = '../../assets/ojito.mp3';          
+              audioIzq.load();            
+              audioIzq.play();
               console.log("Comienza a Reproducir");
             }
           
