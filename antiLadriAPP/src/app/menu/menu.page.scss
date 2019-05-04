@@ -1,0 +1,14 @@
+ion-content{
+    padding-top: 20%;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+}
+
+ion-title{
+    color: whitesmoke;
+}
+
+ion-header, ion-footer, ion-toolbar{
+    background: #79726f;
+}
