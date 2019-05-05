@@ -16,7 +16,7 @@
 
     <ion-card-content>
       Sacar una foto de algo que te guste!!
-      <ion-img [src]="imagenTomada" *ngIf="imagenTomada"></ion-img>
+     
     </ion-card-content>
   </ion-card>
 
@@ -32,33 +32,37 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card *ngIf="arrayFotos.length > 0">
+  <ion-card *ngIf="arrayLindas.length > 0">
     <ion-card-header>
       <ion-card-title>Selecciona las fotos Lindas a subir.</ion-card-title>
     </ion-card-header>    
   
     <ion-card-content>
       <ion-list >
-        <ion-item *ngFor="let foto of arrayFotos">
+        <ion-item *ngFor="let foto of arrayLindas">
           <ion-label>Subir</ion-label>
-          <ion-checkbox slot="start" [(ngModel)]="foto.isChecked"></ion-checkbox>
-          <p>{{foto.imagen}} - {{foto.tipo}}</p>
+          <ion-checkbox slot="start" [(ngModel)]="foto.isChecked"></ion-checkbox>         
+            
+            <img [src]="foto.preview" style="height: 150px; width: 130px" alt="no carga la imagen">        
+        
         </ion-item>
       </ion-list>      
     </ion-card-content>
   </ion-card>
 
-  <ion-card *ngIf="arrayFotos.length > 0">
+  <ion-card *ngIf="arrayFeas.length > 0">
     <ion-card-header>
       <ion-card-title>Selecciona las fotos Feas a subir.</ion-card-title>
     </ion-card-header>    
   
     <ion-card-content>
       <ion-list >
-        <ion-item *ngFor="let foto of arrayFotos">
+        <ion-item *ngFor="let foto of arrayFeas">
           <ion-label>Subir</ion-label>
           <ion-checkbox slot="start" [(ngModel)]="foto.isChecked"></ion-checkbox>
-          <p>{{foto.imagen}} - {{foto.tipo}}</p>
+          
+            <img [src]="foto.preview" style="height: 150px; width: 130px" alt="no carga la imagen">
+                  
         </ion-item>
       </ion-list>      
     </ion-card-content>

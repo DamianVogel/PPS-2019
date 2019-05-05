@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { NavController } from '@ionic/angular';
 import * as firebase from 'firebase';
+import { WebView } from '@ionic-native/ionic-webview/ngx';
+
+
 
 @Component({
   selector: 'app-menu',
@@ -22,7 +25,8 @@ export class MenuPage implements OnInit {
   // }];
 
   arrayFotos = [];
-  
+  arrayLindas = [];
+  arrayFeas = [];  
   
 
   refLindas = firebase.database().ref('imagenes/lindas/');
@@ -30,6 +34,7 @@ export class MenuPage implements OnInit {
 
   options: CameraOptions = {
     quality: 10,
+    //destinationType: this.camera.DestinationType.DATA_URL,
     destinationType: this.camera.DestinationType.FILE_URI,
     encodingType: this.camera.EncodingType.JPEG,
     mediaType: this.camera.MediaType.PICTURE
@@ -37,7 +42,8 @@ export class MenuPage implements OnInit {
 
   constructor(
     private camera: Camera,
-    private navCtrl: NavController, 
+    private navCtrl: NavController,
+    private webview: WebView
     ) {
       
      }
@@ -50,8 +56,17 @@ export class MenuPage implements OnInit {
   subirImagen(imagen){
     //let newImg = this.ref.push();
     //newImg.set(imagen);
+    //this.arrayFotos.filter( nueval)
+  
   }
 
+
+  filtrarFotos(){
+    let arrayLindas = this.arrayFotos.filter((fotos) =>{
+      return fotos.tipo == 'linda';
+    })
+
+  }
 
 
   
@@ -59,51 +74,67 @@ export class MenuPage implements OnInit {
 
   
   sacarFoto(tipo){
-
     
-    switch(tipo){
-      case 'linda':
-        this.arrayFotos.push({
-          'tipo':'linda',
-          'imagen':'FotoLinda',
-          isChecked:false
-        });
+    var imagenTomada;
+    var preview;
 
-      break;
+    this.camera.getPicture(this.options).then((imageData) => {
+      // imageData is either a base64 encoded string or a file URI
+      // If it's base64 (DATA_URL):
+        imagenTomada = 'data:image/jpeg;base64,' + imageData;
+        preview = this.webview.convertFileSrc(imageData);
+        //window.Ionic.WebView.convertFileSrc()
+        
+        
+        //console.log(imagenTomada);
+          
       
-      
-      case 'fea':
-        this.arrayFotos.push({
-          'tipo':'fea',
-          'imagen':'FotoFea',
-          isChecked:false
-        });
+        switch(tipo){
+          case 'linda':
+            this.arrayFotos.push({
+              'tipo':'linda',
+              'imagen': imagenTomada,
+              'preview': preview,
+              isChecked:false
+            });
+          
+            this.arrayLindas = this.arrayFotos.filter((fotos) =>{
+              return fotos.tipo == 'linda';
+            })
 
-      
-      
-      break;
+          break;
+          
+          
+          case 'fea':
+            this.arrayFotos.push({
+              'tipo':'fea',
+              'imagen': imagenTomada,
+              'preview': preview,
+              isChecked:false
+            }); 
 
+            this.arrayFeas = this.arrayFotos.filter((fotos) =>{
+              return fotos.tipo == 'fea';
+            })
+            
 
-    }
+          break;
+        }
+        
+        //console.log(this.arrayFotos);
+          
+      },(err) => {
+          console.log("ERROR EN CAMARA ", JSON.stringify(err));
+      }
+    );
+      
     
     // this.arrayFotos.forEach(element => {
     //   this.subirImagen(element);
     // });
-
-    // this.camera.getPicture(this.options).then((imageData) => {
-    // // imageData is either a base64 encoded string or a file URI
-    // // If it's base64 (DATA_URL):
-    //   this.imagenTomada = 'data:image/jpeg;base64,' + imageData;
-    //         //this.camera.cleanup();
-    //   this.arrayFotos.push(this.imagenTomada);
-      
-
-
-    // }, (err) => {
-    //   // Handle error
-    // });
-    // }
   }
+    
+  
 
   
 
