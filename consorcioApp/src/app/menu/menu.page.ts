@@ -15,9 +15,18 @@ export class MenuPage implements OnInit {
 
   imagenTomada: string;
 
-  arrayFotos = [];
+  // arrayFotos = [{
+  //   'tipo':'',
+  //   'imagen':'',
+  //   isChecked:false                      
+  // }];
 
-  ref = firebase.database().ref('imagenes/');
+  arrayFotos = [];
+  
+  
+
+  refLindas = firebase.database().ref('imagenes/lindas/');
+  refFeas = firebase.database().ref('imagenes/feas/')
 
   options: CameraOptions = {
     quality: 10,
@@ -39,19 +48,47 @@ export class MenuPage implements OnInit {
   }
 
   subirImagen(imagen){
-    let newImg = this.ref.push();
-    newImg.set(imagen);
+    //let newImg = this.ref.push();
+    //newImg.set(imagen);
   }
 
 
+
   
-  sacarFoto(){
 
-    this.arrayFotos.push("this.imagenTomada");
 
-    this.arrayFotos.forEach(element => {
-      this.subirImagen(element);
-    });
+  
+  sacarFoto(tipo){
+
+    
+    switch(tipo){
+      case 'linda':
+        this.arrayFotos.push({
+          'tipo':'linda',
+          'imagen':'FotoLinda',
+          isChecked:false
+        });
+
+      break;
+      
+      
+      case 'fea':
+        this.arrayFotos.push({
+          'tipo':'fea',
+          'imagen':'FotoFea',
+          isChecked:false
+        });
+
+      
+      
+      break;
+
+
+    }
+    
+    // this.arrayFotos.forEach(element => {
+    //   this.subirImagen(element);
+    // });
 
     // this.camera.getPicture(this.options).then((imageData) => {
     // // imageData is either a base64 encoded string or a file URI
@@ -67,6 +104,10 @@ export class MenuPage implements OnInit {
     // });
     // }
   }
+
+  
+
+  
 
 
 }

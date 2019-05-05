@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-card (click)="sacarFoto()">
+  <ion-card (click)="sacarFoto('linda')">
     <ion-card-header>
       <ion-card-title>Cosas Lindas</ion-card-title>
     </ion-card-header>
@@ -20,7 +20,7 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card (click)="sacarFoto()">
+  <ion-card (click)="sacarFoto('fea')">
     <ion-card-header>
       <ion-card-title>Cosas Feas</ion-card-title>
     </ion-card-header>
@@ -34,15 +34,31 @@
 
   <ion-card *ngIf="arrayFotos.length > 0">
     <ion-card-header>
-      <ion-card-title>Listado de Fotos</ion-card-title>
+      <ion-card-title>Selecciona las fotos Lindas a subir.</ion-card-title>
     </ion-card-header>    
   
     <ion-card-content>
       <ion-list >
         <ion-item *ngFor="let foto of arrayFotos">
           <ion-label>Subir</ion-label>
-          <ion-checkbox slot="start"></ion-checkbox>
-          <p>{{foto}}</p>
+          <ion-checkbox slot="start" [(ngModel)]="foto.isChecked"></ion-checkbox>
+          <p>{{foto.imagen}} - {{foto.tipo}}</p>
+        </ion-item>
+      </ion-list>      
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="arrayFotos.length > 0">
+    <ion-card-header>
+      <ion-card-title>Selecciona las fotos Feas a subir.</ion-card-title>
+    </ion-card-header>    
+  
+    <ion-card-content>
+      <ion-list >
+        <ion-item *ngFor="let foto of arrayFotos">
+          <ion-label>Subir</ion-label>
+          <ion-checkbox slot="start" [(ngModel)]="foto.isChecked"></ion-checkbox>
+          <p>{{foto.imagen}} - {{foto.tipo}}</p>
         </ion-item>
       </ion-list>      
     </ion-card-content>
