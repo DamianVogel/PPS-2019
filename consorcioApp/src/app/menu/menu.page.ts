@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { NavController } from '@ionic/angular';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-menu',
@@ -16,6 +17,8 @@ export class MenuPage implements OnInit {
 
   arrayFotos = [];
 
+  ref = firebase.database().ref('imagenes/');
+
   options: CameraOptions = {
     quality: 10,
     destinationType: this.camera.DestinationType.FILE_URI,
@@ -25,20 +28,30 @@ export class MenuPage implements OnInit {
 
   constructor(
     private camera: Camera,
-    private navCtrl: NavController,
-    
-    ) { }
+    private navCtrl: NavController, 
+    ) {
+      
+     }
 
   ngOnInit() {
     
   
   }
 
-  
+  subirImagen(imagen){
+    let newImg = this.ref.push();
+    newImg.set(imagen);
+  }
+
+
   
   sacarFoto(){
 
     this.arrayFotos.push("this.imagenTomada");
+
+    this.arrayFotos.forEach(element => {
+      this.subirImagen(element);
+    });
 
     // this.camera.getPicture(this.options).then((imageData) => {
     // // imageData is either a base64 encoded string or a file URI
