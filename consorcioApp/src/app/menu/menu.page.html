@@ -31,4 +31,26 @@
       Mostranos que es lo que te parece feo...
     </ion-card-content>
   </ion-card>
+
+  <ion-card *ngIf="arrayFotos.length > 0">
+    <ion-card-header>
+      <ion-card-title>Listado de Fotos</ion-card-title>
+    </ion-card-header>    
+  
+    <ion-card-content>
+      <ion-list >
+        <ion-item *ngFor="let foto of arrayFotos">
+          <ion-label>Subir</ion-label>
+          <ion-checkbox slot="start"></ion-checkbox>
+          <p>{{foto}}</p>
+        </ion-item>
+      </ion-list>      
+    </ion-card-content>
+  </ion-card>
+
+
+
+
+
+
 </ion-content>
