@@ -29,8 +29,9 @@ export class MenuPage implements OnInit {
   arrayFeas = [];  
   
 
-  refLindas = firebase.database().ref('imagenes/lindas/');
-  refFeas = firebase.database().ref('imagenes/feas/')
+
+  ref = firebase.database().ref('imagenes/');
+  //refFeas = firebase.database().ref('imagenes/feas/')
 
   options: CameraOptions = {
     quality: 10,
@@ -54,18 +55,33 @@ export class MenuPage implements OnInit {
   }
 
   subirImagen(imagen){
-    //let newImg = this.ref.push();
-    //newImg.set(imagen);
+    let newImg = this.ref.push();
+    newImg.set(imagen);
     //this.arrayFotos.filter( nueval)
-  
   }
 
 
-  filtrarFotos(){
-    let arrayLindas = this.arrayFotos.filter((fotos) =>{
-      return fotos.tipo == 'linda';
-    })
+  subirFotos(array){
+    
+    console.log(array);
 
+
+    array.forEach(imagen => {
+        
+      if(imagen.isChecked == true){
+        this.subirImagen(imagen);
+        array.splice(imagen, 1);
+        console.log(array);
+      }      
+    });
+
+    console.log(array);
+  }
+
+  eliminarFoto(array, imagen){
+    console.log(array);
+    array.splice(imagen, 1);
+    console.log(array);
   }
 
 
@@ -133,6 +149,8 @@ export class MenuPage implements OnInit {
     //   this.subirImagen(element);
     // });
   }
+
+
     
   
 

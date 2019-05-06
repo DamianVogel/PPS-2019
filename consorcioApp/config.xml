@@ -3,7 +3,7 @@
     <name>Consorcio App</name>
     <description>Una app para tu consorcio</description>
     <author email="rodolfovogel@gmail.com" href="http://github.com/DamianVogel">DamianVogel</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://192.168.0.21:8100" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -89,4 +89,5 @@
     <plugin name="cordova-plugin-camera" spec="4.0.3" />
     <plugin name="cordova-plugin-android-permissions" spec="1.0.0" />
     <engine name="android" spec="8.0.0" />
+    <allow-navigation href="http://192.168.0.21:8100" sessionid="bf476bff" />
 </widget>
