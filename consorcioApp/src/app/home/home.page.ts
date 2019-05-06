@@ -5,6 +5,7 @@ import { ToastController, NavController, ModalController } from '@ionic/angular'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { timer } from 'rxjs';
 import {ConexionUsuariosPage} from '../conexion-usuarios/conexion-usuarios.page';
+import { Storage } from '@ionic/storage';
 
 
 
@@ -29,7 +30,8 @@ export class HomePage {
     public toastController: ToastController,
     private formBuilder: FormBuilder,
     public modalController: ModalController,
-    public navController: NavController){
+    public navController: NavController,
+    private storage: Storage){
     
     this.buildForm();
   }
@@ -99,7 +101,11 @@ export class HomePage {
         if(usuario.correo == this.formGroup.value.email && usuario.clave == this.formGroup.value.clave){
           flagLogin = true;
           this.loginToast(flagLogin);            
+          
+          this.storage.set('usuario', usuario.correo);
+          
           timer(2500).subscribe(() => this.navController.navigateForward('/menu'));
+          
 
           break;
         }

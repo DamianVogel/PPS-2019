@@ -19,6 +19,9 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 //import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 
+import { IonicStorageModule } from '@ionic/storage';
+
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,7 +31,8 @@ import { WebView } from '@ionic-native/ionic-webview/ngx';
     IonicModule.forRoot(), 
     AppRoutingModule, 
     MenuPageModule,
-    ConexionUsuariosPageModule
+    ConexionUsuariosPageModule,
+    IonicStorageModule.forRoot()
   ],
   providers: [
     StatusBar,

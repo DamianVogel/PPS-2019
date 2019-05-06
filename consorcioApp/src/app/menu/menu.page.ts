@@ -3,6 +3,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { NavController } from '@ionic/angular';
 import * as firebase from 'firebase';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
+import { Storage } from '@ionic/storage';
 
 
 
@@ -16,7 +17,7 @@ export class MenuPage implements OnInit {
   casaLinda = '../../assets/Casa feliz.png';
   casaFea = '../../assets/Casa fea.png';
 
-  imagenTomada: string;
+  usuario: string;
 
   // arrayFotos = [{
   //   'tipo':'',
@@ -44,13 +45,18 @@ export class MenuPage implements OnInit {
   constructor(
     private camera: Camera,
     private navCtrl: NavController,
-    private webview: WebView
+    private webview: WebView,
+    private storage: Storage
     ) {
       
      }
 
   ngOnInit() {
-    
+    this.storage.get('usuario').then((val) => {
+      
+      this.usuario = val;
+      console.log('El usuario es', this.usuario);
+    });
   
   }
 
@@ -108,6 +114,7 @@ export class MenuPage implements OnInit {
         switch(tipo){
           case 'linda':
             this.arrayFotos.push({
+              
               'tipo':'linda',
               'imagen': imagenTomada,
               'preview': preview,
