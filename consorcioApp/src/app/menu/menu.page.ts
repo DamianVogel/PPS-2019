@@ -4,6 +4,8 @@ import { NavController } from '@ionic/angular';
 import * as firebase from 'firebase';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { Storage } from '@ionic/storage';
+import { Base64 } from '@ionic-native/base64/ngx';
+
 
 
 
@@ -17,7 +19,8 @@ export class MenuPage implements OnInit {
   casaLinda = '../../assets/Casa feliz.png';
   casaFea = '../../assets/Casa fea.png';
 
-  usuario: string;
+  usuario: any;
+
 
   // arrayFotos = [{
   //   'tipo':'',
@@ -46,7 +49,8 @@ export class MenuPage implements OnInit {
     private camera: Camera,
     private navCtrl: NavController,
     private webview: WebView,
-    private storage: Storage
+    private storage: Storage,
+    private base64: Base64
     ) {
       
      }
@@ -55,15 +59,24 @@ export class MenuPage implements OnInit {
     this.storage.get('usuario').then((val) => {
       
       this.usuario = val;
+      
       console.log('El usuario es', this.usuario);
     });
   
   }
 
   subirImagen(imagen){
+    
+    let filePath: string = 'file:///...';
+      this.base64.encodeFile(filePath).then((base64File: string) => {
+        console.log(base64File);
+      }, (err) => {
+        console.log(err);
+      });
+        
     let newImg = this.ref.push();
     newImg.set(imagen);
-    //this.arrayFotos.filter( nueval)
+    
   }
 
 
@@ -99,11 +112,13 @@ export class MenuPage implements OnInit {
     
     var imagenTomada;
     var preview;
+    var path;
 
     this.camera.getPicture(this.options).then((imageData) => {
       // imageData is either a base64 encoded string or a file URI
       // If it's base64 (DATA_URL):
         imagenTomada = 'data:image/jpeg;base64,' + imageData;
+        path = imageData;
         preview = this.webview.convertFileSrc(imageData);
         //window.Ionic.WebView.convertFileSrc()
         
@@ -114,10 +129,13 @@ export class MenuPage implements OnInit {
         switch(tipo){
           case 'linda':
             this.arrayFotos.push({
-              
+              'usuario':this.usuario.correo,
+              'usuario_key': this.usuario.key,              
               'tipo':'linda',
               'imagen': imagenTomada,
               'preview': preview,
+              'path': path,
+              'timestamp': Date(),
               isChecked:false
             });
           
@@ -130,9 +148,13 @@ export class MenuPage implements OnInit {
           
           case 'fea':
             this.arrayFotos.push({
+              'usuario':this.usuario.correo,
+              'usuario_key': this.usuario.key,
               'tipo':'fea',
               'imagen': imagenTomada,
               'preview': preview,
+              'path': path,
+              'timestamp': Date(),
               isChecked:false
             }); 
 

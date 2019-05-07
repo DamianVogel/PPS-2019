@@ -21,6 +21,7 @@ import { WebView } from '@ionic-native/ionic-webview/ngx';
 
 import { IonicStorageModule } from '@ionic/storage';
 
+import { Base64 } from '@ionic-native/base64/ngx';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { IonicStorageModule } from '@ionic/storage';
     SplashScreen,
     Camera,
     WebView,
+    Base64,
     //AndroidPermissions,
 
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

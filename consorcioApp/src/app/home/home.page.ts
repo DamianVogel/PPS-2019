@@ -102,7 +102,7 @@ export class HomePage {
           flagLogin = true;
           this.loginToast(flagLogin);            
           
-          this.storage.set('usuario', usuario.correo);
+          this.storage.set('usuario', usuario);
           
           timer(2500).subscribe(() => this.navController.navigateForward('/menu'));
           
