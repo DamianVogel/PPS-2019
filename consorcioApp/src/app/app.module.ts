@@ -14,6 +14,8 @@ import { MenuPageModule } from '../app/menu/menu.module';
 
 import { ConexionUsuariosPage } from '../app/conexion-usuarios/conexion-usuarios.page';
 import {ConexionUsuariosPageModule} from '../app/conexion-usuarios/conexion-usuarios.module';
+import { GaleriaPageModule } from '../app/galeria/galeria.module';
+import { GaleriaPage } from '../app/galeria/galeria.page';
 
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 //import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
@@ -26,13 +28,14 @@ import { Base64 } from '@ionic-native/base64/ngx';
 
 @NgModule({
   declarations: [AppComponent],
-  entryComponents: [MenuPage,ConexionUsuariosPage],
+  entryComponents: [MenuPage,ConexionUsuariosPage, GaleriaPage],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule, 
     MenuPageModule,
     ConexionUsuariosPageModule,
+    GaleriaPageModule,
     IonicStorageModule.forRoot()
   ],
   providers: [

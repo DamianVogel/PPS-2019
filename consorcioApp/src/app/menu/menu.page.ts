@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
-import { NavController } from '@ionic/angular';
+import { NavController, ModalController } from '@ionic/angular';
 import * as firebase from 'firebase';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { Storage } from '@ionic/storage';
 import { Base64 } from '@ionic-native/base64/ngx';
-
+import { GaleriaPage } from '../galeria/galeria.page';
 
 
 
@@ -50,7 +50,8 @@ export class MenuPage implements OnInit {
     private navCtrl: NavController,
     private webview: WebView,
     private storage: Storage,
-    private base64: Base64
+    private base64: Base64,
+    public modalController: ModalController
     ) {
       
      }
@@ -189,7 +190,32 @@ export class MenuPage implements OnInit {
     // });
   }
 
+  verFotosNube(){
+    this.presentModal();
+  }
 
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: GaleriaPage,
+      componentProps: { value: 123 }
+    });
+
+    modal.onDidDismiss()
+      .then((data) => {
+        
+        //this.usuarioSeleccionado = data.data; // Here's your selected user!
+        // console.log(this.usuarioSeleccionado.clave);
+        // console.log(this.usuarioSeleccionado.correo);
+
+        // this.formGroup.value.email = this.usuarioSeleccionado.correo;
+        // this.formGroup.value.clave = this.usuarioSeleccionado.clave;
+
+        // this.formGroup.controls['email'].setValue(this.usuarioSeleccionado.correo);
+        // this.formGroup.controls['clave'].setValue(this.usuarioSeleccionado.clave);
+      });
+
+    return await modal.present();
+  }
     
   
 
