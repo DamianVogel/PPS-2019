@@ -6,15 +6,20 @@
 
 <ion-content>
     <ion-slides pager="true" [options]="slideOpts">
-        <ion-slide>
-          <h1>Slide 1</h1>
+        <ion-slide *ngFor="let img of listaImagenes">
+          <!-- <h1>{{img.key}}</h1><br> -->
+          <ion-img [src]="img.imgbase64" >
+
+          </ion-img><br>
+          <p>Foto tomada por: {{img.usuario}}</p>
+
         </ion-slide>
-        <ion-slide>
+        <!-- <ion-slide>
           <h1>Slide 2</h1>
         </ion-slide>
         <ion-slide>
           <h1>Slide 3</h1>
-        </ion-slide>
+        </ion-slide> -->
       </ion-slides>
 
 </ion-content>
