@@ -67,16 +67,21 @@ export class MenuPage implements OnInit {
 
   subirImagen(imagen){
     
-    let filePath: string = 'file:///...';
-      this.base64.encodeFile(filePath).then((base64File: string) => {
+    let filePath: string = imagen.path;
+    
+    this.base64.encodeFile(filePath).then((base64File: string) => {
         console.log(base64File);
+        imagen.imgbase64 = base64File;
+        
+        let newImg = this.ref.push();
+        
+        newImg.set(imagen);
+        
+
       }, (err) => {
         console.log(err);
       });
         
-    let newImg = this.ref.push();
-    newImg.set(imagen);
-    
   }
 
 
@@ -84,10 +89,12 @@ export class MenuPage implements OnInit {
     
     console.log(array);
 
-
-    array.forEach(imagen => {
-        
+    array.forEach(imagen => {        
       if(imagen.isChecked == true){
+        
+        
+
+        
         this.subirImagen(imagen);
         array.splice(imagen, 1);
         console.log(array);
@@ -96,6 +103,7 @@ export class MenuPage implements OnInit {
 
     console.log(array);
   }
+
 
   eliminarFoto(array, imagen){
     console.log(array);
@@ -133,6 +141,7 @@ export class MenuPage implements OnInit {
               'usuario_key': this.usuario.key,              
               'tipo':'linda',
               'imagen': imagenTomada,
+              'imgbase64':'',
               'preview': preview,
               'path': path,
               'timestamp': Date(),
@@ -152,6 +161,7 @@ export class MenuPage implements OnInit {
               'usuario_key': this.usuario.key,
               'tipo':'fea',
               'imagen': imagenTomada,
+              'imgbase64':'',
               'preview': preview,
               'path': path,
               'timestamp': Date(),
