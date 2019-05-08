@@ -86,20 +86,27 @@ export class MenuPage implements OnInit {
     
    // this.arrayFotosASubir = array;
     
+    array.reverse();
+
+
+    //TAL VEZ HAY QUE HACER UN FOR Y NO UN FOR EACH.
     array.forEach((imagen,index) => {        
       if(imagen.isChecked == true){
                
+
+        //USAR CONSOLE LOG PARA VER QUE SE BORRA.
         this.subirImagen(imagen);        
+        array.splice(index, 1);
       }      
     });
 
 
-    array = [];
+   // array = [];
       
     this.progressBar = false;
    
     //colocar ACA ALERT DE QUE SE SUBIERON OK!
-    
+
 
   }
 
