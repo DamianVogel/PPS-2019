@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
-import { NavController, ModalController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 import * as firebase from 'firebase';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { Storage } from '@ionic/storage';
@@ -21,16 +21,11 @@ export class MenuPage implements OnInit {
 
   usuario: any;
 
-
-  // arrayFotos = [{
-  //   'tipo':'',
-  //   'imagen':'',
-  //   isChecked:false                      
-  // }];
-
+  progressBar: boolean = false;
   arrayFotos = [];
   arrayLindas = [];
   arrayFeas = [];  
+  arrayFotosASubir = [];
   
 
 
@@ -47,7 +42,7 @@ export class MenuPage implements OnInit {
 
   constructor(
     private camera: Camera,
-    private navCtrl: NavController,
+  
     private webview: WebView,
     private storage: Storage,
     private base64: Base64,
@@ -71,13 +66,13 @@ export class MenuPage implements OnInit {
     let filePath: string = imagen.path;
     
     this.base64.encodeFile(filePath).then((base64File: string) => {
-        console.log(base64File);
+        //console.log(base64File);
         imagen.imgbase64 = base64File;
         
         let newImg = this.ref.push();
         
         newImg.set(imagen);
-        
+        console.log("Se subio el archivo!");
 
       }, (err) => {
         console.log(err);
@@ -87,31 +82,29 @@ export class MenuPage implements OnInit {
 
 
   subirFotos(array){
+    this.progressBar = true;
     
-    console.log(array);
-
-    array.forEach(imagen => {        
+   // this.arrayFotosASubir = array;
+    
+    array.forEach((imagen,index) => {        
       if(imagen.isChecked == true){
-        
-        
-
-        
-        this.subirImagen(imagen);
-        array.splice(imagen, 1);
-        console.log(array);
+               
+        this.subirImagen(imagen);        
       }      
     });
 
-    console.log(array);
+
+    array = [];
+      
+    this.progressBar = false;
+   
+    //colocar ACA ALERT DE QUE SE SUBIERON OK!
+    
+
   }
 
 
-  eliminarFoto(array, imagen){
-    console.log(array);
-    array.splice(imagen, 1);
-    console.log(array);
-  }
-
+  
 
   
 
