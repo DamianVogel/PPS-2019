@@ -3,7 +3,7 @@
     <name>Consorcio App</name>
     <description>Una app para tu consorcio</description>
     <author email="rodolfovogel@gmail.com" href="http://github.com/DamianVogel">DamianVogel</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://192.168.0.18:8100" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -92,4 +92,5 @@
     <plugin name="cordova-sqlite-storage" spec="3.2.0" />
     <plugin name="com-badrit-base64" spec="0.2.0" />
     <engine name="android" spec="8.0.0" />
+    <allow-navigation href="http://192.168.0.18:8100" sessionid="a0fd622f" />
 </widget>

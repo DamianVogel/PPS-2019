@@ -117,6 +117,17 @@ export class MenuPage implements OnInit {
 
     }
     
+    this.arrayFotos = array;
+
+    this.arrayLindas = this.arrayFotos.filter((fotos) =>{
+      return fotos.tipo == 'linda' && fotos.subido == false;
+    })
+
+    this.arrayFeas = this.arrayFotos.filter((fotos) =>{
+      return fotos.tipo == 'fea' && fotos.subido == false;
+    })
+
+
     this.progressBar = false;
     //colocar ACA ALERT DE QUE SE SUBIERON OK!
   }

@@ -20,8 +20,8 @@ export class GaleriaPage implements OnInit {
   ref = firebase.database().ref('imagenes/');
 
   constructor(
-    private webview: WebView,
-    private storage: Storage,
+    //private webview: WebView,
+    //private storage: Storage,
     
   ) {
     this.ref.on('value', resp => {
