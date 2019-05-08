@@ -6,6 +6,7 @@ import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { Storage } from '@ionic/storage';
 import { Base64 } from '@ionic-native/base64/ngx';
 import { GaleriaPage } from '../galeria/galeria.page';
+import { FormGroup } from '@angular/forms';
 
 
 
@@ -83,40 +84,43 @@ export class MenuPage implements OnInit {
 
   subirFotos(array){
     this.progressBar = true;
-    
-   // this.arrayFotosASubir = array;
-    
-    array.reverse();
-
+      
+   // array.reverse();
 
     //TAL VEZ HAY QUE HACER UN FOR Y NO UN FOR EACH.
-    array.forEach((imagen,index) => {        
-      if(imagen.isChecked == true){
+    // array.forEach((imagen,index) => {        
+    //   if(imagen.isChecked == true){
                
 
-        //USAR CONSOLE LOG PARA VER QUE SE BORRA.
-        this.subirImagen(imagen);        
-        array.splice(index, 1);
-      }      
-    });
+    //     //USAR CONSOLE LOG PARA VER QUE SE BORRA.
+    //     this.subirImagen(imagen);        
+    //     array.splice(index, 1);
+    //   }      
+    // });
 
-
-   // array = [];
+    for (let index = 0; index < array.length; index++) {
+      const element = array[index];
       
+      console.log(element);
+
+      if(element.isChecked == true){
+        
+        console.log("el elemento.subido es:" ,element.subido);
+        this.subirImagen(element);        
+        element.subido = true;
+        //array.splice(index, 1);
+        console.log("el elemento.subido luego :" ,element.subido);
+        console.log("llego al final del for para el elemento ", index+1);
+      }
+
+
+
+    }
+    
     this.progressBar = false;
-   
     //colocar ACA ALERT DE QUE SE SUBIERON OK!
-
-
   }
 
-
-  
-
-  
-
-
-  
   sacarFoto(tipo){
     
     var imagenTomada;
@@ -124,17 +128,11 @@ export class MenuPage implements OnInit {
     var path;
 
     this.camera.getPicture(this.options).then((imageData) => {
-      // imageData is either a base64 encoded string or a file URI
-      // If it's base64 (DATA_URL):
+      
         imagenTomada = 'data:image/jpeg;base64,' + imageData;
         path = imageData;
         preview = this.webview.convertFileSrc(imageData);
-        //window.Ionic.WebView.convertFileSrc()
-        
-        
-        //console.log(imagenTomada);
-          
-      
+            
         switch(tipo){
           case 'linda':
             this.arrayFotos.push({
@@ -143,6 +141,7 @@ export class MenuPage implements OnInit {
               'tipo':'linda',
               'imagen': imagenTomada,
               'imgbase64':'',
+              'subido': false,
               'preview': preview,
               'path': path,
               'timestamp': Date(),
@@ -150,7 +149,7 @@ export class MenuPage implements OnInit {
             });
           
             this.arrayLindas = this.arrayFotos.filter((fotos) =>{
-              return fotos.tipo == 'linda';
+              return fotos.tipo == 'linda' && fotos.subido == false;
             })
 
           break;
@@ -163,6 +162,7 @@ export class MenuPage implements OnInit {
               'tipo':'fea',
               'imagen': imagenTomada,
               'imgbase64':'',
+              'subido': false,
               'preview': preview,
               'path': path,
               'timestamp': Date(),
@@ -170,7 +170,7 @@ export class MenuPage implements OnInit {
             }); 
 
             this.arrayFeas = this.arrayFotos.filter((fotos) =>{
-              return fotos.tipo == 'fea';
+              return fotos.tipo == 'fea' && fotos.subido == false;
             })
             
 
