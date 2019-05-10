@@ -19,6 +19,9 @@ import { GaleriaPage } from '../app/galeria/galeria.page';
 import { MenuPage} from '../app/menu/menu.page';
 import { MenuPageModule } from '../app/menu/menu.module';
 
+import { IonicStorageModule } from '@ionic/storage';
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [ConexionUsuariosPage, GaleriaPage, MenuPage],
@@ -28,7 +31,8 @@ import { MenuPageModule } from '../app/menu/menu.module';
     AppRoutingModule,
     GaleriaPageModule,
     ConexionUsuariosPageModule,
-    MenuPageModule
+    MenuPageModule,
+    IonicStorageModule.forRoot()
 
   ],
   providers: [

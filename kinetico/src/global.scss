@@ -47,7 +47,21 @@
     --width: 80%;
 }
 
+// .splash {
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     z-index: 999;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     background: #fc5625;
+    
+// }
+
 .splash {
+    padding-top: 70 px;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -62,17 +76,41 @@
 
 
 
+
+
+
 .lds-circle {
     display: inline-block;
     transform: translateZ(1px);   
-    width: 150px;
-    height:150px;
+    margin-top: 30px !important;
+    
+    width: 100%;
+    height:100%;
     margin: 6px;
-    border-radius: 50%;
-    background: rgb(255, 255, 255);
+    //border-radius: 50%;
+    background: #fc5625;
     animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+
   
   }
+
+//   .firma {
+//     display: inline-block;
+//     transform: translateZ(1px);   
+//     margin-top: 30px !important;
+    
+//     width: 150px;
+//     height:150px;
+//     margin: 6px;
+//     //border-radius: 50%;
+//     background: #fc5625;
+//     animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+
+  
+//   }
+
+
+
   
   @keyframes lds-circle {
     0%, 100% {
