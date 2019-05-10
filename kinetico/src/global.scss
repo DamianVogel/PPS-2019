@@ -1,4 +1,5 @@
 // http://ionicframework.com/docs/theming/
+@import url('https://fonts.googleapis.com/css?family=Concert+One');
 @import '~@ionic/angular/css/core.css';
 @import '~@ionic/angular/css/normalize.css';
 @import '~@ionic/angular/css/structure.css';
@@ -10,14 +11,17 @@
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
 
+//fc5625
+
+
 *{
-    font-family: 'Bubblegum Sans', cursive;
+    font-family: 'Concert One', cursive;
 }
 
 
 .toastOk{
-    --background:#67AB6A;
-    --box-shadow: 4px 4px 8px 1px rgb(96, 155, 91);
+    --background:rgb(231, 105, 31);
+    --box-shadow: 4px 4px 8px 1px rgb(233, 53, 7);
     --border-radius: 10px 10px 10px 10px;
     font-size: 5.0vw;
     text-align: center;
@@ -31,7 +35,7 @@
 
 .toastFail{
     --background:#C370A0;
-    --box-shadow: 4px 4px 8px 1px rgb(138, 96, 89);
+    --box-shadow: 4px 4px 8px 1px rgb(194, 59, 35);
     --border-radius: 10px 10px 10px 10px;
     font-size: 5.0vw;
     
@@ -52,7 +56,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #6CC2BD;
+    background: #fc5625;
     
 }
 

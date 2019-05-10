@@ -1,14 +1,53 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
+  
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  <ion-card> 
+    <ion-card-header>
+      <ion-card-title>Kinetico</ion-card-title>
+    </ion-card-header>
+
+
+    
+    <ion-img [src]="imagen"></ion-img>
+    
+    <form [formGroup]="formGroup">
+      <ion-item>
+        <ion-input
+          class="label"      
+          formControlName="email"
+          type="email" 
+          placeholder="Ingrese su correo electronico...." 
+          autofocus="true"       
+        ></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-input 
+          class="label"
+          formControlName="clave"
+          type="password" 
+          placeholder="Ingrese su contraseña"        
+        ></ion-input>
+      </ion-item>
+
+      <ion-button 
+        expand="full" 
+        color="success"
+        (click)="enviar()"
+        [disabled]="formGroup.invalid"
+        >Conectarse
+      </ion-button>
+    </form>    
+  </ion-card>
+
+  <ion-card>   
+        <ion-button expand="full" (click)="mostrarUsuarios()"  >Usuarios Test</ion-button>   
+  </ion-card>  
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title id="titleFooter">Desarrollado por DevDv - Damian Vogel - PSS 4º A</ion-title>
+  </ion-toolbar>
+</ion-footer>

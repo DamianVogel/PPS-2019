@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuariosTest } from '../../app/enviroment'; 
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-conexion-usuarios',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConexionUsuariosPage implements OnInit {
 
-  constructor() { }
+  usuariosTest: any;
+
+  constructor(
+    private modalController: ModalController
+  ) {
+    this.usuariosTest = UsuariosTest();
+  }
 
   ngOnInit() {
+  }
+
+  UsuarioSeleccionado(usuario):void {
+    console.log(usuario);
+    this.modalController.dismiss(usuario);
   }
 
 }
