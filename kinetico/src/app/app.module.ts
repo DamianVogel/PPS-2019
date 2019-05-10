@@ -21,13 +21,15 @@ import { MenuPageModule } from '../app/menu/menu.module';
 
 @NgModule({
   declarations: [AppComponent],
-  entryComponents: [ConexionUsuariosPage, GaleriaPage],
+  entryComponents: [ConexionUsuariosPage, GaleriaPage, MenuPage],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
     GaleriaPageModule,
-    ConexionUsuariosPageModule
+    ConexionUsuariosPageModule,
+    MenuPageModule
+
   ],
   providers: [
     StatusBar,
