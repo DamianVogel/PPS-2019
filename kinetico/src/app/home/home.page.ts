@@ -24,6 +24,8 @@ export class HomePage {
 
   public formGroup: FormGroup;
 
+  imagen = '../../assets/logo.png';
+
   constructor(
     public toastController: ToastController,
     private formBuilder: FormBuilder,
