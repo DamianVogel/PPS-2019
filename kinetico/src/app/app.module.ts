@@ -28,6 +28,9 @@ import { IonicStorageModule } from '@ionic/storage';
 
 import { Base64 } from '@ionic-native/base64/ngx';
 
+import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion/ngx';
+import { Gyroscope, GyroscopeOrientation, GyroscopeOptions } from '@ionic-native/gyroscope/ngx';
+
 
 
 @NgModule({
@@ -50,6 +53,9 @@ import { Base64 } from '@ionic-native/base64/ngx';
     Camera,
     WebView,
     Base64,
+    DeviceMotion,
+    Gyroscope,
+    
     
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

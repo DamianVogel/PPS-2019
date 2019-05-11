@@ -40,7 +40,8 @@ export class GaleriaPage implements OnInit {
 
   slideOpts = {
     initialSlide: 1,
-    speed: 400
+    speed: 400,
+    slidesPerView: 1
   };
 
   ref = firebase.database().ref('imagenes/');
@@ -63,9 +64,9 @@ export class GaleriaPage implements OnInit {
 
   Accelerometer(){
     this.activar=false;
-    var flag = true;
-    var flagIzq =  true;
-    var flagDer = true;
+    // var flag = true;
+    // var flagIzq =  true;
+    // var flagDer = true;
 
     this.deviceMotion.getCurrentAcceleration().then(
       (acceleration: DeviceMotionAccelerationData) =>
@@ -85,10 +86,10 @@ export class GaleriaPage implements OnInit {
         this.accZ=acceleration.z;
         
         //vertical y linterna
-        if(this.accY > 5 && flag == true){
-          flag = false;
+        if(this.accY > 3){
+          
           console.log("Esta vertical");
-          this.slideWithNav.slideTo(0);
+          //this.slideWithNav.slideTo(0);
         //   this.flashlight.switchOn();
         //   timer(5000).subscribe(() => {
         //     if(this.accY > 3){
@@ -113,10 +114,12 @@ export class GaleriaPage implements OnInit {
 
         
         //izquierda 
-        if(this.accX > 5 && flagIzq == true){
-            flagIzq = false;
+        if(this.accX > 3){
+            
             console.log("Esta a la izquierda");
-            this.slideWithNav.slidePrev();
+            this.slideWithNav.slidePrev(500).then(() => {
+              //this.checkIfNavDisabled(object, slideView);
+            });
             // timer(500).subscribe(() => {
             //   if(this.accX > 3){
             //     flagIzq = false;
@@ -129,39 +132,18 @@ export class GaleriaPage implements OnInit {
             //   }
             // }); 
           
-        }else if(this.accX < 3  && flagIzq == false){
-            
-          //Para de reproducir this.flashlight.switchOff();
-          
-          console.log("Detiene la Reproduccion"); 
-          flagIzq = true;
-        }
-        
+         }
          
         //derecha 
-        if(this.accX < -5 && flagDer == true){
-          flagDer = false;
+        if(this.accX < -3 ){
+          
           console.log("Esta orientado hacia la derecha");
-           this.slideWithNav.slideNext();
-          // timer(500).subscribe(() => {
-          //   if(this.accX < -3){
-          //     flagDer = false;
-          //     let audioIzq = new Audio();
-          //     audioIzq.src = '../../assets/ojito.mp3';          
-          //     audioIzq.load();            
-          //     audioIzq.play();
-          //     console.log("Comienza a Reproducir");
-          //   }
-          
-          
-          //})
-        } else if(this.accX > -5  && flagDer == false){
-        
-          //parar de reproducir
-          console.log("Detiene la Reproduccion"); 
-          flagDer = true;
-        }
+           this.slideWithNav.slideNext(500).then(() => {
+            //this.checkIfNavDisabled(object, slideView);
+          });
 
+          
+        } 
         
 
       
@@ -174,6 +156,19 @@ export class GaleriaPage implements OnInit {
       this.activar = true;
     }
 
+  //Move to Next slide
+  // slideNext(object, slideView) {
+  //   slideView.slideNext(500).then(() => {
+  //     //this.checkIfNavDisabled(object, slideView);
+  //   });
+  // }
+ 
+  // //Move to previous slide
+  // slidePrev(object, slideView) {
+  //   slideView.slidePrev(500).then(() => {
+  //     //this.checkIfNavDisabled(object, slideView);
+  //   });;
+  // }
 
 
 
