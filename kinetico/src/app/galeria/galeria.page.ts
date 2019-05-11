@@ -9,6 +9,8 @@ import { Gyroscope, GyroscopeOrientation, GyroscopeOptions } from '@ionic-native
 import { ViewChild } from '@angular/core';
 
 import { IonSlides } from '@ionic/angular';
+
+import { timer } from 'rxjs';
  
 
 
@@ -26,6 +28,8 @@ export class GaleriaPage implements OnInit {
   public accX:any;
   public accY:any;
   public accZ:any;
+
+  public tap: number;
 
   public subscription: any;
   public activar: boolean = true;
@@ -64,7 +68,7 @@ export class GaleriaPage implements OnInit {
 
   Accelerometer(){
     this.activar=false;
-    // var flag = true;
+    var flag = true;
     // var flagIzq =  true;
     // var flagDer = true;
 
@@ -79,39 +83,31 @@ export class GaleriaPage implements OnInit {
     
     
       // Watch device acceleration
-      this.subscription = this.deviceMotion.watchAcceleration({frequency:200}).subscribe((acceleration: DeviceMotionAccelerationData) => {
+    this.subscription = this.deviceMotion.watchAcceleration({frequency:200}).subscribe((acceleration: DeviceMotionAccelerationData) => {
         console.log(acceleration);
         this.accX=acceleration.x;
         this.accY=acceleration.y;
         this.accZ=acceleration.z;
+        let tap;
         
-        //vertical y linterna
-        if(this.accY > 3){
+        
+        
+       
+        
+        if(this.accY > 8){
           
           console.log("Esta vertical");
-          //this.slideWithNav.slideTo(0);
-        //   this.flashlight.switchOn();
-        //   timer(5000).subscribe(() => {
-        //     if(this.accY > 3){
-        //       flag = false;
-        //       this.flashlight.switchOff();
-        //       console.log("Comienza a Reproducir");
-        //       let audioIzq = new Audio();
-        //       audioIzq.src = '../../assets/fiuuu.mp3';          
-        //       audioIzq.load();            
-        //       audioIzq.play();
+        
+          timer(3000).subscribe(() => {
+            if(this.accY > 3){
+              
+              this.slideWithNav.slideTo(0);
               
             
-        //     }
-          
-          
-        //   })
-        // } else if(this.accY < 3  && flag == false){
-          
-        //   this.flashlight.switchOff();
-        //   flag = true;
+            }
+        
+          });
         }
-
         
         //izquierda 
         if(this.accX > 3){
