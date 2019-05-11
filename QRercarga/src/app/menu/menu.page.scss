@@ -1,64 +1,96 @@
-page-list-master {
-    .content{
-        background-image: linear-gradient(45deg, #4fa49a, #4361c2);
-    }
+// page-list-master {
+//     .content{
+//         background-image: linear-gradient(45deg, #4fa49a, #4361c2);
+//     }
 
-    #imageQrCreative {
-        display: block;
-        margin: 40px auto;
-        // margin-left: auto;
-        // margin-right: auto;
-        width: 150px;
-    }
+//     #imageQrCreative {
+//         display: block;
+//         margin: 40px auto;
+//         // margin-left: auto;
+//         // margin-right: auto;
+//         width: 150px;
+//     }
 
-    #scannerqr{
-        height: 100%;
-        background: url('../assets/lector.png') no-repeat;
-        text-align: center;
-        background-size: 80%;
-        background-position: center;
-        margin-top: 0%;
-        visibility: visible;
-    }
+//     #scannerqr{
+//         height: 100%;
+//         background: url('../assets/lector.png') no-repeat;
+//         text-align: center;
+//         background-size: 80%;
+//         background-position: center;
+//         margin-top: 0%;
+//         visibility: visible;
+//     }
     
-    // #btnScaneo{
-    //     height: 50px;
-    //     margin: 80px 0;
-    // }
+//     // #btnScaneo{
+//     //     height: 50px;
+//     //     margin: 80px 0;
+//     // }
 
-    // #btnDelete{
-    //     height: 50px;
-    //     margin: 80px 0;
-    // }
+//     // #btnDelete{
+//     //     height: 50px;
+//     //     margin: 80px 0;
+//     // }
 
-    .containerButtonCenter button {
-        height: 50px;
-        margin-top: 40px;
-    }
+//     .containerButtonCenter button {
+//         height: 50px;
+//         margin-top: 40px;
+//     }
     
-    .hidden{
-        visibility: hidden;
-    }
+//     .hidden{
+//         visibility: hidden;
+//     }
     
-    .visible{
-        visibility: visible !important;
-    }
+//     .visible{
+//         visibility: visible !important;
+//     }
 
-    .containerButtonCenter {
-        text-align: center;
-    }
+//     .containerButtonCenter {
+//         text-align: center;
+//     }
 
-    #creditTotalText {
-        text-align: center;
-        color: #FFF;
-        font-size: 40px;
-    }
-}
-
-// .transparentBody { 
-//     background-color: transparent !important;
+//     #creditTotalText {
+//         text-align: center;
+//         color: #FFF;
+//         font-size: 40px;
+//     }
 // }
+
+// // .transparentBody { 
+// //     background-color: transparent !important;
+// // }
 
 ion-app.cameraView, ion-app.cameraView ion-content, ion-app.cameraView .nav-decor {
     background: transparent none !important; 
 }
+
+
+ion-content{
+    
+    display: flex; /* or inline-flex */
+    flex-direction: column;
+    align-items: stretch;
+
+}
+
+ion-grid{
+    justify-content: space-around;
+    height: 100%;
+    
+    ion-card{
+        height: 30%;
+        top: 0 !important;
+        left: 0 !important;
+        bottom: 0 !important;
+        right: 0 !important;
+    
+        // ion-button{
+        //     height: 100%;
+        //     position: relative;
+        //     background-size: cover;
+                           
+        // }
+
+    }
+
+}
+
