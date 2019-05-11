@@ -19,7 +19,16 @@ import { GaleriaPage } from '../app/galeria/galeria.page';
 import { MenuPage} from '../app/menu/menu.page';
 import { MenuPageModule } from '../app/menu/menu.module';
 
+
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+//import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+import { WebView } from '@ionic-native/ionic-webview/ngx';
+
 import { IonicStorageModule } from '@ionic/storage';
+
+import { Base64 } from '@ionic-native/base64/ngx';
+
+import { Slides } from '@ionic/angular';
 
 
 @NgModule({
@@ -32,12 +41,17 @@ import { IonicStorageModule } from '@ionic/storage';
     GaleriaPageModule,
     ConexionUsuariosPageModule,
     MenuPageModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    
 
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
+    WebView,
+    Base64,
+    Slides,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

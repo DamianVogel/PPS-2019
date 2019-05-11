@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-    <ion-slides pager="true" [options]="slideOpts">
+    <ion-slides pager="true" [options]="slideOpts" #slideWithNav>
         <ion-slide *ngFor="let img of listaImagenes">
           <ion-card >
               <ion-card-header>
