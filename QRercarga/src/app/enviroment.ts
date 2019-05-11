@@ -32,3 +32,31 @@ export const UsuariosTest = () => {
     return ArrayUsuariosTest;
 }
 
+export const SaldoUsuarios = snapshot => {
+    let ArraySaldo = [];
+
+    snapshot.forEach(element => {
+        console.log(element.val());
+        let item = element.val();
+        item.key = element.key;
+        ArraySaldo.push(item);
+    });
+
+    return ArraySaldo;
+}
+
+export const Codigos = snapshot => {
+    let ArrayCodigos = [];
+
+    snapshot.forEach(element => {
+        console.log(element.val());
+        let item = element.val();
+        item.key = element.key;
+        ArrayCodigos.push(item);
+    });
+
+    return ArrayCodigos;
+}
+
+
+

@@ -8,6 +8,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import {ConexionUsuariosPage} from '../conexion-usuarios/conexion-usuarios.page';
 import { timer } from 'rxjs';
+import { Storage } from '@ionic/storage';
+
 
 
 @Component({
@@ -31,7 +33,8 @@ export class HomePage implements OnInit {
     public toastController: ToastController,
     private formBuilder: FormBuilder,
     public modalController: ModalController,
-    public navController: NavController) 
+    public navController: NavController,
+    private storage: Storage) 
   {
     this.buildForm();
   }
@@ -113,7 +116,9 @@ export class HomePage implements OnInit {
           
           //VALIDADO
           flagLogin = true;
-          this.loginToast(flagLogin);            
+          this.loginToast(flagLogin);        
+          
+          this.storage.set('usuario', usuario);
           
           timer(2500).subscribe(() => this.navController.navigateForward('/menu')); 
           

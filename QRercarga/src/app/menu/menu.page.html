@@ -1,21 +1,50 @@
-<div id="scannerqr">
+<div *ngIf="scannerqr">
 </div>
-<ion-content class="content">
-  <!-- <img id="imageQrCreative" src="../../assets/img/qr_code_round_corner.png"> -->
+<ion-content *ngIf="!scannerqr" class="content">
+  <!-- <img id="imageQrCreative" src="../../assets/img/qr_code_round_corner.png">
   <div id="creditTotalText">
     ${{creditoTotal}}
   </div>
   <div class="containerButtonCenter">
     <button ion-button color="primary" (click)="scan()" id="btnScaneo">Escanear</button>
-    <!-- <button ion-button color="secondary" (click)="delete()" id="btnDelete">Borrar créditos</button> -->
+     <button ion-button color="secondary" (click)="delete()" id="btnDelete">Borrar créditos</button> 
   </div>
   <div class="containerButtonCenter">
-    <!-- <button ion-button color="primary" (click)="scan()" id="btnScaneo">Escanear</button> -->
+    <button ion-button color="primary" (click)="scan()" id="btnScaneo">Escanear</button> 
     <button ion-button color="secondary" (click)="delete()" id="btnDelete">Borrar<br>créditos</button>
   </div>
   <ion-fab top left class="hidden">
     <button ion-fab color="primary" (click)="backScan()" id="btnBackScan">
       <ion-icon name="arrow-round-back"></ion-icon>
     </button>
-  </ion-fab>
+  </ion-fab> -->
+
+
+  <ion-card>
+      <!-- <ion-card (click)="sacarFoto('linda')"> -->
+    <ion-card-header>
+      <ion-card-title>{{creditoTotal}}</ion-card-title>
+    </ion-card-header>
+
+    
+  
+    <ion-card-content>
+       <button ion-button color="primary" (click)="scan()" id="btnScaneo">Escanear</button>
+       <button ion-button color="secondary" (click)="delete()" id="btnDelete">Borrar<br>créditos</button>
+       <button ion-fab color="primary" (click)="backScan()" id="btnBackScan">
+          <ion-icon name="arrow-round-back"></ion-icon>
+        </button>
+     
+    </ion-card-content>
+  </ion-card>
+  
+  
+
+
+
+
+
+
+
+
 </ion-content>

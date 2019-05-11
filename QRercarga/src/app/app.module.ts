@@ -15,18 +15,22 @@ import {ConexionUsuariosPageModule} from '../app/conexion-usuarios/conexion-usua
 
 import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
 
-//import { MenuPage} from '../app/menu/menu.page';
+import { MenuPage} from '../app/menu/menu.page';
 import { MenuPageModule } from '../app/menu/menu.module';
+
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [AppComponent],
-  entryComponents: [ConexionUsuariosPage],
+  entryComponents: [ConexionUsuariosPage, MenuPage],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
     ReactiveFormsModule,
-    ConexionUsuariosPageModule
+    ConexionUsuariosPageModule,
+    MenuPageModule,
+    IonicStorageModule.forRoot()
   ],
   providers: [
     StatusBar,

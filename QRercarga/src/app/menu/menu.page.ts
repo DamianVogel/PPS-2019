@@ -4,30 +4,42 @@ import { ModalController, NavController, ToastController } from '@ionic/angular'
 import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
 import * as firebase from 'firebase';
 //import { snapshotToArray } from '../../app/app.firebase.config';
-
+import { SaldoUsuarios, Codigos } from '../../app/enviroment';
+import { Storage } from '@ionic/storage';
 
 
 
 // @IonicPage()
 @Component({
-  selector: 'page-list-master',
-  templateUrl: 'list-master.html'
+  selector: 'page-menu',
+  templateUrl: 'menu.page.html'
 })
-export class ListMasterPage {
+export class MenuPage {
   private creditosUsuario: { key: string, usuario: string, codigo: string }[] = [];
   private usuario: any;
   private creditos: { key: string, usuario: string, codigo: string }[] = [];
   private codigos: { codigo: string, valor: number }[] = [];
   private creditoTotal: number = 0;
 
+  private scannerqr: boolean;
+
   constructor(public navCtrl: NavController,
     public modalCtrl: ModalController,
     private qrScanner: QRScanner,
-    public toastCtrl: ToastController) {
+    public toastCtrl: ToastController,
+    private storage: Storage) {
     
-      this.usuario = JSON.parse(sessionStorage.getItem('usuario'));
-    this.traerCodigos();
-    // this.traerCreditoUsuario();
+      this.scannerqr = false;
+
+      this.storage.get('usuario').then((val) => {
+      
+        this.usuario = val;
+        
+        console.log('El usuario es', this.usuario);
+      });
+    
+      this.traerCodigos();
+      this.traerCreditoUsuario();
   }
 
   // ionViewWillLoad() {
@@ -47,7 +59,10 @@ export class ListMasterPage {
   }
 
   scan() {
-    this.hideElements();
+    
+    this.scannerqr = true;
+
+    //this.hideElements();
     // this.agregarCredito("ae338e4e0cbb4e4bcffaf9ce5b409feb8edd5172");
     this.qrScanner.prepare()
       .then((status: QRScannerStatus) => {
@@ -91,7 +106,7 @@ export class ListMasterPage {
       
       //TOMAR SALDO DE LOS USUARIOS
 
-      //this.creditos = ListaUsuarios(resp);
+      this.creditos = SaldoUsuarios(resp);
       if (this.creditos != []) {
         this.creditosUsuario = this.creditos.filter(elem => elem.usuario == this.usuario.correo)
       }
@@ -110,7 +125,7 @@ export class ListMasterPage {
     ref.on('value', resp => {
       
       //TRAER CODIGOS
-      //this.codigos = snapshotToArray(resp);
+      this.codigos = Codigos(resp);
       this.traerCreditoUsuario();
     });
   }
@@ -163,33 +178,42 @@ export class ListMasterPage {
     //   alert('Error: ' + error);
     //   // this.Modal('Error', 'Detalle: ' + error);
     // });
+  
+  
+    this.scannerqr = false;
+    this.traerCreditoUsuario();
   }
 
 
   hideElements() {
-    window.document.querySelector('ion-content').classList.add('cameraView');
-    window.document.querySelector('ion-app').classList.add('cameraView');
-    window.document.getElementById('btnScaneo').hidden = true;
-    window.document.getElementById('btnDelete').hidden = true;
-    window.document.querySelector('ion-fab').classList.remove('hidden');
-    window.document.querySelector('ion-fab').classList.add('visible');
-    window.document.getElementById('imageQrCreative').hidden = true;
-    window.document.getElementById('creditTotalText').hidden = true;
+    
+    
+    
+    // window.document.querySelector('ion-content').classList.add('cameraView');
+    // window.document.querySelector('ion-app').classList.add('cameraView');
+    // window.document.getElementById('btnScaneo').hidden = true;
+    // window.document.getElementById('btnDelete').hidden = true;
+    // window.document.querySelector('ion-fab').classList.remove('hidden');
+    // window.document.querySelector('ion-fab').classList.add('visible');
+    // window.document.getElementById('imageQrCreative').hidden = true;
+    // window.document.getElementById('creditTotalText').hidden = true;
+    
   }
 
-  showElements() {
-    window.document.querySelector('ion-content').classList.remove('cameraView');
-    window.document.querySelector('ion-app').classList.remove('cameraView');
-    window.document.getElementById('btnScaneo').hidden = false;
-    window.document.getElementById('btnDelete').hidden = false;
-    window.document.querySelector('ion-fab').classList.remove('visible');
-    window.document.querySelector('ion-fab').classList.add('hidden');
-    window.document.getElementById('imageQrCreative').hidden = false;
-    window.document.getElementById('creditTotalText').hidden = false;
-  }
+  // showElements() {
+  //   window.document.querySelector('ion-content').classList.remove('cameraView');
+  //   window.document.querySelector('ion-app').classList.remove('cameraView');
+  //   window.document.getElementById('btnScaneo').hidden = false;
+  //   window.document.getElementById('btnDelete').hidden = false;
+  //   window.document.querySelector('ion-fab').classList.remove('visible');
+  //   window.document.querySelector('ion-fab').classList.add('hidden');
+  //   window.document.getElementById('imageQrCreative').hidden = false;
+  //   window.document.getElementById('creditTotalText').hidden = false;
+  // }
 
   backScan() {
-    this.showElements();
+    //this.showElements();
+    this.scannerqr = false;
   }
 
   delete(){
