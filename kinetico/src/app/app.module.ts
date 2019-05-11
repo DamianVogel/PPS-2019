@@ -28,7 +28,6 @@ import { IonicStorageModule } from '@ionic/storage';
 
 import { Base64 } from '@ionic-native/base64/ngx';
 
-import { Slides } from '@ionic/angular';
 
 
 @NgModule({
@@ -51,7 +50,7 @@ import { Slides } from '@ionic/angular';
     Camera,
     WebView,
     Base64,
-    Slides,
+    
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
