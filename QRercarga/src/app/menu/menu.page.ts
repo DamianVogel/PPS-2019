@@ -76,6 +76,7 @@ export class MenuPage {
 
             this.qrScanner.hide(); // hide camera preview
             scanSub.unsubscribe(); // stop scanning
+            this.scannerqr = false;
           });
           this.qrScanner.resumePreview();
           // show camera preview
@@ -107,13 +108,20 @@ export class MenuPage {
       //TOMAR SALDO DE LOS USUARIOS
 
       this.creditos = SaldoUsuarios(resp);
+      
+      console.log("saldos: ", this.creditos);
+      
       if (this.creditos != []) {
         this.creditosUsuario = this.creditos.filter(elem => elem.usuario == this.usuario.correo)
       }
 
+      console.log("saldos: ", this.creditos);
+
       this.creditosUsuario.forEach(credito => {
         let codigo = this.codigos.find(elem => elem.codigo == credito.codigo);
-        this.creditoTotal += codigo.valor;
+        
+        console.log("codigo: ",codigo);
+        this.creditoTotal = this.creditoTotal + codigo.valor;
       });
     });
 
@@ -126,6 +134,8 @@ export class MenuPage {
       
       //TRAER CODIGOS
       this.codigos = Codigos(resp);
+      console.log("trajo los codigos: ", this.codigos);
+      
       this.traerCreditoUsuario();
     });
   }
@@ -136,6 +146,7 @@ export class MenuPage {
     let credito: number = 0;
     let cred: any;
 
+    this.traerCreditoUsuario();
     cred = this.creditosUsuario.find(elem => {
       return elem.codigo == codigo;
     });
@@ -148,6 +159,7 @@ export class MenuPage {
       // this.Modal('Información', '¡Código ya cargado!');
     }
     this.traerCreditoUsuario();
+    this.scannerqr = true;
   }
 
   cargarCredito(codigo: string) {

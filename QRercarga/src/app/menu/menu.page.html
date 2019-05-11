@@ -28,23 +28,29 @@
 
     
   
-    <ion-card-content>
+    <!-- <ion-card-content>
        <button ion-button color="primary" (click)="scan()" id="btnScaneo">Escanear</button>
        <button ion-button color="secondary" (click)="delete()" id="btnDelete">Borrar<br>créditos</button>
        <button ion-fab color="primary" (click)="backScan()" id="btnBackScan">
           <ion-icon name="arrow-round-back"></ion-icon>
         </button>
      
-    </ion-card-content>
+    </ion-card-content> -->
+  </ion-card>
+
+  <ion-card>
+      <!-- <ion-card (click)="sacarFoto('linda')"> -->
+    <ion-card-header>
+      <ion-card-title (click)="scan()"> Cargar Credito</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+      <!-- <ion-card (click)="sacarFoto('linda')"> -->
+    <ion-card-header>
+      <ion-card-title (click)="delete()">Borrar</ion-card-title>
+    </ion-card-header>
   </ion-card>
   
-  
-
-
-
-
-
-
-
 
 </ion-content>
