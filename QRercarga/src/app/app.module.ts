@@ -13,8 +13,10 @@ import { AppComponent } from './app.component';
 import { ConexionUsuariosPage } from '../app/conexion-usuarios/conexion-usuarios.page';
 import {ConexionUsuariosPageModule} from '../app/conexion-usuarios/conexion-usuarios.module';
 
-// import { MenuPage} from '../app/menu/menu.page';
-// import { MenuPageModule } from '../app/menu/menu.module';
+import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
+
+//import { MenuPage} from '../app/menu/menu.page';
+import { MenuPageModule } from '../app/menu/menu.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,6 +31,7 @@ import {ConexionUsuariosPageModule} from '../app/conexion-usuarios/conexion-usua
   providers: [
     StatusBar,
     SplashScreen,
+    QRScanner,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
